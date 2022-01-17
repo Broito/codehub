@@ -8,25 +8,11 @@ import pandas as pd
 import math
 from dbfread import DBF
 
-# 测试一下git
-# 测试一下branch
-# 测试一下合并分支
-
-# 参数设置(以上海为例)
-# 市人口为 17640842，城镇人口为 20217748
-real_urban_pop_6 = 17640842
-real_total_pop_6 = 22315474
-urban_ratio = real_urban_pop_6/real_total_pop_6
-data_total_pop = 17236899.5
-# 刘纪远的数据，分辨率为30，理论上，有效的radius应为30的倍数，最短buffer半径为15m
-# 这里的radius都指buffer的半径，最终输出结果时需要*2
-radius = 50
-radius_step = 50
-
-os.chdir(r'F:\\workspace\\Research_2022_city_boundary\\data_processing\\')
-env.workspace = r'F:\workspace\Research_2022_city_boundary\data_processing\temp_workspace'
+os.chdir(r'E:\\workspace\\Research_2022_city_boundary\\data_processing\\')
+env.workspace = r'E:\workspace\Research_2022_city_boundary\data_processing\temp_workspace'
 env.overwriteOutput = True
 
+# %%
 def zonal(polygon,polygon_field,raster):
     try:
         temp_zonal_table = f'temp_table.dbf'
@@ -68,9 +54,9 @@ def preprocessing(county_code6,county_name):
     file_gov = f'{county_name}_gov.shp'
     Clip_analysis(ori_gov,file_selected_county,file_gov)
 
-    # 提取土地利用类型为51和53的作为不透水面像元
+    # 提取土地利用类型为51,52,53的作为不透水面像元
     file_con = f'{county_name}_landuse_urban.tif'
-    conned = Con(file_landuse_county,1,"","VALUE = 51 or VALUE = 53")
+    conned = Con(file_landuse_county,1,"","VALUE = 51 or VALUE = 52 or VALUE = 53")
     conned.save(file_con)
 
     # 转为矢量
@@ -79,7 +65,7 @@ def preprocessing(county_code6,county_name):
     RasterToPolygon_conversion(file_con, file_urban_polygon, "NO_SIMPLIFY")
 
 
-def calc_urban_ratio(county_name,radius):
+def calc_data_urban_pop(county_name,radius):
     # 作buffer
     file_buffer = f'{county_name}_buffer_{radius}.shp'
     Buffer_analysis(file_urban_polygon,file_buffer,f'{radius} Meters')
@@ -105,54 +91,94 @@ def calc_urban_ratio(county_name,radius):
 
     # zonal生成各斑块上的人口
     urban_pop = zonal(result_selected_ori,'Id',file_extracted_pop)
-    ratio = urban_pop/data_total_pop
 
-    return ratio
+    # 计算基准人口
+    benchmark_pop = urban_pop*ratio6
 
-# %%
-round = 0
-status = 0 # residual < 0, status = 0; else status = 1
-data_ratio = calc_urban_ratio(200100,init_radius)
-# status不变化时，radius按照步长增长；status发生变化，则radius_step转为1/2
-residual = data_ratio-urban_ratio
-residual_list = []
-radius_list = []
-residual_list.append(residual)
-radius_list.append(radius*2)
+    return urban_pop,benchmark_pop
 
-while True:
-    
-    round += 1 # 用于计数 
+# %% 计算最佳阈值，benchmark_pop为要比对的基准人口
+def find_best_thres(code6,name6,init_thres_step):
+    times = 0
+    status = 0 # residual < 0, status = 0; else status = 1
+    thres = 0
+    thres_step = init_thres_step
 
-    # 判断radius如何变化
-    # 四种情况，连续小于真值，按当前步长增加
-    if residual < 0 and status == 0:
-        radius += radius_step
-    # 连续超过真值，就按相同倍率减小
-    elif residual > 0 and status == 1:
-        radius -= radius_step
-    # 上次小于，这次大于，则步长减半减小
-    elif residual > 0 and status == 0:
-        status = 1
-        radius_step = round(radius_step/2)
-        radius -= radius_step
-    # 上次大于，这次小于，则倍率减半增加
-    elif residual < 0 and status == 1:
-        status = 0
-        radius_step = round(radius_step/2)
-        radius += radius_step      
-    
-    data_ratio = calc_urban_ratio(200100,radius)
-    residual = data_ratio-urban_ratio
+    preprocessing(code6,name6)
+    data_urban_pop, benchmark_pop = calc_data_urban_pop(name6,thres)
+    # status不变化时，radius按照步长增长；status发生变化，则radius_step转为1/2
+    residual = data_urban_pop-benchmark_pop
+    # 若是搜索半径为0时，data_urban_pop就大于pop6了，那么直接以最小半径0为最佳阈值
+    if residual > 0:
+        residual_prop = abs(residual/benchmark_pop) 
+        return 0,residual,residual_prop,pop6,urban6,data_urban_pop
+    residual_list = []
+    thres_list = []
     residual_list.append(residual)
-    radius_list.append(radius*2)
-    
-    if radius < 15 or radius > 1000:
-        break
-    
-    
-min_residual = min([abs(i) for i in residual_list])
-best_radius = radius_list[residual_list.index(min_residual)]
+    thres_list.append(thres)
+
+    while True:
+        
+        times += 1 # 用于计数 
+
+        # 判断radius如何变化
+        # 四种情况，连续小于真值，按当前步长增加
+        if residual < 0 and status == 0:
+            thres += thres_step
+        # 连续大于真值，就按相同倍率减小
+        elif residual > 0 and status == 1:
+            thres -= thres_step
+        # 上次小于，这次大于，则步长减半，半径减小
+        elif residual > 0 and status == 0:
+            status = 1
+            thres_step = round(thres_step/2)
+            thres -= thres_step
+        # 上次大于于，这次小于，则步长减半，半径增加
+        elif residual < 0 and status == 1:
+            status = 0
+            thres_step = round(thres_step/2)
+            thres += thres_step    
+        
+        data_urban_pop = calc_data_urban_pop(name6,thres)
+        residual = data_urban_pop - benchmark_pop
+        print(f'round:{times} -=> thres={thres},thres_step={thres_step},residual = {residual}\n')
+        residual_list.append(residual)
+        thres_list.append(thres)
+        
+        # 最小的有效buffer即15，或者buffer小于0了
+        if thres_step <=15 or thres < 0:
+            break
+
+    residual_abs_list = [abs(i) for i in residual_list]
+    min_residual = min(residual_abs_list)
+    best_index = residual_abs_list.index(min_residual)
+    best_thres = thres_list[best_index]
+    best_residual =residual_list[best_index]
+    residual_prop = abs(best_residual/benchmark_pop) 
+    # print(residual_list)
+    # print(min_residual)
+    # print(best_thres)
+    # print(best_residual)
+
+    return best_thres,best_residual,residual_prop,pop6,urban6,data_urban_pop
+
+# %% select final polygon
+def copy_polygon_to_result(county_name,best_thres):
+    out_path = r'.\\result_folder\\'
+    temp_selected_file = f'{county_name}_boundary6_{best_thres}.shp'
+    CopyFeatures_management(temp_selected_file,out_path+temp_selected_file)
+
+# %%  <<<<<<<<<<<<<<<<<<<<<<<<<<<-----运行部分----->>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 获取六普人口和城市化率
+df = pd.read_csv('census6_main.csv',encoding = 'gb18030')
+df.index = df['code6']
+name = df.loc[310100,'城市名']
+pop6 = df.loc[310100,'总人口']
+urban6 = df.loc[310100,'市人口']
+ratio6 = urban6/pop6
+
+best_thres,best_residual,residual_prop,pop6,urban6,data_urban_pop = find_best_thres(310100,name,120)
+copy_polygon_to_result(name,best_thres)
 
 
  
