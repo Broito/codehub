@@ -27,7 +27,7 @@ def zonal(polygon,polygon_field,raster):
 # %%
 def preprocessing(county_code6,county_name):
 # 选择需要进行操作的地区矢量
-    ori_county_polygon = r"F:\workspace\Research_2022_city_boundary\data_processing\county_with_census_data.shp"
+    ori_county_polygon = r"E:\workspace\Research_2022_city_boundary\data_processing\county_with_census_data.shp"
     county_name = county_name
     county_code6 = county_code6
     file_selected_county = f'{county_name}_polygon.shp'
@@ -41,15 +41,15 @@ def preprocessing(county_code6,county_name):
     extracted = ExtractByMask(ori_landuse,file_selected_county)
     extracted.save(file_landuse_county)
     # 裁切人口栅格
-    ori_pop_raster = r"H:\DataHub\WorldPop_proj\chn_ppp_2010.tif"
-    # ori_pop_raster = r"H:\DataHub\Landscan\LandScan Global 2010\lspop2010"
+    ori_pop_raster = r"I:\DataHub\WorldPop_proj\chn_ppp_2010.tif"
+    # ori_pop_raster = r"I:\DataHub\Landscan\LandScan Global 2010\lspop2010"
     global file_extracted_pop
     file_extracted_pop = f'{county_name}_pop.tif'
     extracted = ExtractByMask(ori_pop_raster,file_selected_county)
     extracted.save(file_extracted_pop)
 
     # 裁切政府所在地
-    ori_gov = r"F:\workspace\Research_2022_city_boundary\data_processing\governments\China_county_gov_total.shp"
+    ori_gov = r"E:\workspace\Research_2022_city_boundary\data_processing\governments\China_county_gov_total.shp"
     global file_gov
     file_gov = f'{county_name}_gov.shp'
     Clip_analysis(ori_gov,file_selected_county,file_gov)
