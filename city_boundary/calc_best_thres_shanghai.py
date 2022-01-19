@@ -156,17 +156,15 @@ def find_best_thres(code6,name6,init_thres_step):
 
     residual_abs_list = [abs(i) for i in residual_list]
     min_residual = min(residual_abs_list)
-    best_index = residual_abs_list.index(min_residual)
-    best_thres = thres_list[best_index]
-    best_residual =residual_list[best_index]
-    residual_prop = abs(best_residual/benchmark_pop) 
+    best_indexes = [i for i,x in enumerate(residual_abs_list) if x==min_residual]
+    best_thres = min([thres_list[i] for i in best_indexes]) 
+    residual_prop = abs(min_residual/benchmark_pop) 
 
     print(residual_list)
     print(min_residual)
     print(best_thres)
-    print(best_residual)
 
-    return best_thres,best_residual,residual_prop,pop6,urban6,data_urban_pop
+    return best_thres,min_residual,residual_prop,pop6,urban6,data_urban_pop
 
 # %% select final polygon
 def copy_polygon_to_result(county_name,best_thres):
@@ -178,7 +176,7 @@ def copy_polygon_to_result(county_name,best_thres):
 # 获取六普人口和城市化率
 df = pd.read_csv('census6_main.csv',encoding = 'gb18030')
 df.index = df['code6']
-code6 = 310100
+code6 = 420300
 name = df.loc[code6,'城市名']
 pop6 = df.loc[code6,'总人口']
 urban6 = df.loc[code6,'市人口']
