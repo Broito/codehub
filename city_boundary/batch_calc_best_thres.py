@@ -131,6 +131,10 @@ def find_best_thres(code6,name6,init_thres_step):
         # 四种情况，连续小于真值，按当前步长增加
         if residual < 0 and status == 0:
             thres += thres_step
+        # 特殊情况，防止为0
+        elif thres-thres_step == 0 and status == 1:
+            thres_step = round(thres_step/2)
+            thres -= thres_step
         # 连续大于真值，就按相同倍率减小
         elif residual > 0 and status == 1:
             thres -= thres_step
@@ -180,7 +184,7 @@ df.index = df['code6']
 
 count = 1
 start_time = datetime.now()
-lst_df = list(df.iterrows())
+lst_df = list(df.iterrows())[4:]
 
 for i in lst_df:
     row = i[1]
@@ -204,5 +208,5 @@ for i in lst_df:
     print(f'{count}//{len(lst_df)},{code6},{name}-->best thres:{best_thres}, --> best residual:{best_residual}.  \n time:{(datetime.now()-start_time).seconds/60} min')
     count += 1
 
-df.to_csv('result_best_thres.csv',encoding = 'utf8')
+df.to_excel('result_best_thres.xlsx')
  
