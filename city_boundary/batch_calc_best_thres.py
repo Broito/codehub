@@ -7,6 +7,7 @@ from arcpy.sa import Con
 import pandas as pd
 import math
 from dbfread import DBF
+from datetime import datetime 
 
 os.chdir(r'E:\\workspace\\Research_2022_city_boundary\\data_processing\\')
 env.workspace = r'E:\workspace\Research_2022_city_boundary\data_processing\temp_workspace'
@@ -176,16 +177,32 @@ def copy_polygon_to_result(county_name,best_thres):
 # 获取六普人口和城市化率
 df = pd.read_csv('census6_main.csv',encoding = 'gb18030')
 df.index = df['code6']
-code6 = 420300
-name = df.loc[code6,'城市名']
-pop6 = df.loc[code6,'总人口']
-urban6 = df.loc[code6,'市人口']
-# urban6 = df.loc[code6,'城镇人口']
-ratio6 = urban6/pop6
 
-best_thres,best_residual,residual_prop,pop6,urban6,data_urban_pop = find_best_thres(code6,name,120)
-if best_thres != 0:
-    copy_polygon_to_result(name,best_thres)
+count = 1
+start_time = datetime.now()
+lst_df = list(df.iterrows())
 
+for i in lst_df:
+    row = i[1]
+    code6 = row['code6']
+    name = row['城市名']
+    pop6 = row['总人口']
+    urban6 = row['市人口']
+    ratio6 = urban6/pop6
 
+    best_thres,best_residual,residual_prop,pop6,urban6,data_urban_pop = find_best_thres(code6,name,120)
+
+    df.loc[code6,'best_thres'] = best_thres
+    df.loc[code6,'best_residual'] = best_residual
+    df.loc[code6,'data_urban_pop'] = data_urban_pop
+
+    if best_thres != 0:
+        copy_polygon_to_result(name,best_thres)
+    elif best_thres == 0:
+        copy_polygon_to_result(name,1)
+
+    print(f'{count}//{len(lst_df)},{code6},{name}-->best thres:{best_thres}, --> best residual:{best_residual}.  \n time:{(datetime.now()-start_time).seconds/60} min')
+    count += 1
+
+df.to_csv('result_best_thres.csv',encoding = 'utf8')
  
