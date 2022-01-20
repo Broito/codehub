@@ -159,7 +159,7 @@ def find_best_thres(code6,name6,init_thres_step):
         thres_list.append(thres)
         
         # 最小的有效buffer即15，或者buffer小于0了
-        if thres_step <= 15 or thres < 0:
+        if thres_step <= 15 or thres < 0 or thres > 2000:
             break
 
     residual_abs_list = [abs(i) for i in residual_list]
@@ -187,7 +187,7 @@ df.index = df['code6']
 
 count = 1
 start_time = datetime.now()
-lst_df = list(df.iterrows())[37:]
+lst_df = list(df.iterrows())[34:]
 
 for i in lst_df:
     row = i[1]
@@ -202,6 +202,7 @@ for i in lst_df:
     df.loc[code6,'best_thres'] = best_thres
     df.loc[code6,'best_residual'] = best_residual
     df.loc[code6,'data_urban_pop'] = data_urban_pop
+    df.loc[code6,'residual_prop'] = residual_prop
 
     if best_thres != 0 and best_thres != 9999:
         copy_polygon_to_result(name,best_thres)
