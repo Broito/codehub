@@ -187,7 +187,7 @@ df.index = df['code6']
 
 count = 1
 start_time = datetime.now()
-lst_df = list(df.iterrows())[34:]
+lst_df = list(df.iterrows())[258:]
 
 for i in lst_df:
     row = i[1]
