@@ -111,6 +111,9 @@ def find_best_thres(code6,name6,init_thres_step):
     impervious_pop, benchmark_pop = preprocessing(code6,name6)
     print(impervious_pop,benchmark_pop)
     data_urban_pop = calc_data_urban_pop(name6,1) # 最小buffer的radius不能为0，所以用1来代替
+    # 防止无政府poi的地区出现，这些地方单独跑。
+    if data_urban_pop == None:
+        return 9999,0,0,0,0,0
     # status不变化时，radius按照步长增长；status发生变化，则radius_step转为1/2
     print(data_urban_pop)
     residual = data_urban_pop - benchmark_pop
@@ -184,7 +187,7 @@ df.index = df['code6']
 
 count = 1
 start_time = datetime.now()
-lst_df = list(df.iterrows())[4:]
+lst_df = list(df.iterrows())[37:]
 
 for i in lst_df:
     row = i[1]
@@ -200,13 +203,15 @@ for i in lst_df:
     df.loc[code6,'best_residual'] = best_residual
     df.loc[code6,'data_urban_pop'] = data_urban_pop
 
-    if best_thres != 0:
+    if best_thres != 0 and best_thres != 9999:
         copy_polygon_to_result(name,best_thres)
     elif best_thres == 0:
         copy_polygon_to_result(name,1)
+    elif best_thres == 9999:
+        pass
 
     print(f'{count}//{len(lst_df)},{code6},{name}-->best thres:{best_thres}, --> best residual:{best_residual}.  \n time:{(datetime.now()-start_time).seconds/60} min')
     count += 1
 
-df.to_excel('result_best_thres.xlsx')
+df.to_excel('result_best_thres_37.xlsx')
  
