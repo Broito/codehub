@@ -6,6 +6,7 @@ from arcpy.sa.Functions import ExtractByMask, ZonalStatisticsAsTable
 from arcpy.sa import Con, Shrink, Expand
 import pandas as pd
 from dbfread import DBF
+from datetime import datetime 
 
 os.chdir(r'E:\\workspace\\Research_2022_city_boundary\\data_processing\\')
 env.workspace = r'E:\workspace\Research_2022_city_boundary\data_processing\temp_workspace'
@@ -127,12 +128,15 @@ def calc_data_urban_pop(county_name,radius):
 def find_best_thres(code6,name6,init_thres_step):
     times = 0
     status = 0 # residual < 0, status = 0; else status = 1
-    thres = 15 # 15起步
+    thres = 15
     thres_step = init_thres_step
 
     impervious_pop, benchmark_pop = preprocessing(code6,name6)
     print(impervious_pop,benchmark_pop)
     data_urban_pop = calc_data_urban_pop(name6,1) # 最小buffer的radius不能为0，所以用1来代替
+    # 防止无政府poi的地区出现，这些地方单独跑。
+    if data_urban_pop == None:
+        return 9999,0,0,0,0,0    
     # status不变化时，radius按照步长增长；status发生变化，则radius_step转为1/2
     print(data_urban_pop)
     residual = data_urban_pop - benchmark_pop
@@ -171,6 +175,9 @@ def find_best_thres(code6,name6,init_thres_step):
             thres_step = round(thres_step/2)
             thres += thres_step    
         
+        if thres < 0:
+            break
+
         data_urban_pop = calc_data_urban_pop(name6,thres)
         residual = data_urban_pop - benchmark_pop
         print(f'round:{times} -=> thres={thres},thres_step={thres_step},residual = {residual}\n')
@@ -178,7 +185,7 @@ def find_best_thres(code6,name6,init_thres_step):
         thres_list.append(thres)
         
         # 最小的有效buffer即15，或者buffer小于0了
-        if thres_step <= 15 or thres < 0:
+        if thres_step <= 15 or thres < 0 or thres > 2000:
             break
 
     residual_abs_list = [abs(i) for i in residual_list]
@@ -200,19 +207,36 @@ def copy_polygon_to_result(county_name,best_thres):
     CopyFeatures_management(temp_selected_file,out_path+temp_selected_file)
 
 # %%  <<<<<<<<<<<<<<<<<<<<<<<<<<<-----运行部分----->>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# 获取六普人口和城市化率
 df = pd.read_csv('census6_main.csv',encoding = 'gb18030')
 df.index = df['code6']
-code6 = 500100
-name = df.loc[code6,'城市名']
-pop6 = df.loc[code6,'总人口']
-urban6 = df.loc[code6,'市人口']
-# urban6 = df.loc[code6,'城镇人口']
-ratio6 = urban6/pop6
 
-best_thres,best_residual,residual_prop,pop6,urban6,data_urban_pop = find_best_thres(code6,name,60)
-if best_thres != 0:
-    copy_polygon_to_result(name,best_thres)
+count = 1
+start_time = datetime.now()
+lst_df = list(df.iterrows())[72:]
 
+for i in lst_df:
+    row = i[1]
+    code6 = row['code6']
+    name = row['城市名']
+    pop6 = row['总人口']
+    urban6 = row['市人口']
+    ratio6 = urban6/pop6
 
- 
+    best_thres,best_residual,residual_prop,pop6,urban6,data_urban_pop = find_best_thres(code6,name,120)
+
+    df.loc[code6,'best_thres'] = best_thres
+    df.loc[code6,'best_residual'] = best_residual
+    df.loc[code6,'data_urban_pop'] = data_urban_pop
+    df.loc[code6,'residual_prop'] = residual_prop
+
+    if best_thres != 0 and best_thres != 9999:
+        copy_polygon_to_result(name,best_thres)
+    elif best_thres == 0:
+        copy_polygon_to_result(name,1)
+    elif best_thres == 9999:
+        pass
+
+    print(f'{count}//{len(lst_df)},{code6},{name}-->best thres:{best_thres}, --> best residual:{best_residual}.  \n time:{(datetime.now()-start_time).seconds/60} min')
+    count += 1
+
+df.to_excel('result_best_thres_GAIA.xlsx')
