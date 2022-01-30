@@ -1,0 +1,59 @@
+本质：判别每个“新增”环带属于城区还是外围，圈内还是圈外。
+标准：环带值≥根号（内部均值×外部均值）【内外都是不透水面上的】
+指标：①灯光亮度、②人口密度、③二者乘积
+方案：分别算出基于上面三个指标的划分结果
+决策：要严格，就同时满足①②；要宽松，就满足①②之一；要居中，就以①②③任一为标准即可，具体选哪个，看三个方案的结果再说。
+
+step1: get initial data
+
+    patch_urban  # 已确定的urban斑块，初始化为政府所在地斑块
+    patch_rural  # 初始rural斑块 (total_patch erase patch_urban)
+
+    # 计算初始阈值 
+    threshold_pop = sqrt( mean(zonal(urban_pop)) * mean(zonal(rural_pop)) ) # 当前人口阈值 = 根号下（平均urban人口 * 平均rural人口）
+    threshold_ntl = sqrt( mean(zonal(urban_ntl)) * mean(zonal(rural_ntl)) ) # 当前夜光阈值 = 根号下（平均urban夜光 * 平均rural夜光）
+    threshold_combo = threshold_pop * threshold_ntl # 当前综合阈值 = 人口阈值 * 夜光阈值
+    # P.S. 此处zonal求均值，需要先merge圈层内所有斑块为整体
+
+step2: loop each ring
+
+    # 设定决策方案: 宽松，居中，严格
+    strategy = loose/median/strict
+
+    # 以15m为步长，依次吞并周边斑块
+    for radius in n*15:  # n = 1,2,3...
+        
+        # 当前环带 = 按半径扩张的斑块 - 已确定urban斑块
+        current_ring = new_patch.erase(patch_urban)
+
+        # 计算当前环带的三个判别值
+        current_pop, current_ntl, current_combo
+
+        # 以宽松为例
+        if strategy == loose:
+
+            # 如果人口和夜光都小于阈值，那么大于等于该圈层的区域为rural,当前已确定的urban斑块为最终结果
+            if current_pop < threshold_pop and current_ntl < threshold_ntl:
+                final_urban_patch = patch_urban
+                break # 跳出循环，计算结束
+            # 若满足任意一项，当前圈层划分至确定的urban斑块中
+            else:
+                # 更新当前urban范围以及阈值参数
+                patch_urban = new_patch
+                patch_rural = total_patch.erase(patch_urban)
+                threshold_pop = sqrt( min(zonal(urban_pop)) * min(zonal(rural_pop)) )
+                threshold_ntl = sqrt( min(zonal(urban_ntl)) * min(zonal(rural_ntl)) )
+                threshold_combo = threshold_pop * threshold_ntl
+                continue # 循环继续，判别下一个环带
+        
+        elif strategy == strict:
+
+            if 
+
+
+
+    
+
+
+
+
