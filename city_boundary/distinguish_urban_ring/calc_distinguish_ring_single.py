@@ -83,7 +83,7 @@ def preprocessing(county_code6,county_name):
     conned.save(file_con)
 
     # 先收缩后膨胀
-    shrink_radius = 2
+    shrink_radius = 1
     file_shrink = f'{county_name}_shrink{shrink_radius}_urban.tif'
     layer_shrink = Shrink(file_con,shrink_radius,1)
     layer_shrink.save(file_shrink)
@@ -216,47 +216,53 @@ def copy_polygon_to_result(county_name,selected_file,thres,strategy):
 # 获取六普人口和城市化率
 df = pd.read_csv('census6_main.csv',encoding = 'gb18030')
 df.index = df['code6']
-code6 = 310100
+code6 = 110100
 name = df.loc[code6,'城市名']
 
-preprocessing(code6,name)
-file_patch_urban = get_buffer_urban_patch(name,1) # 获取初始斑块
-threshold_pop,threshold_ntl,threshold_combo = get_threshold(name,file_patch_urban,1)
-
-# setup variable
-times = 0
-step = 15
-radius = 15
 strategy_list = ['loose','strict','combo','only_pop','only_ntl']
-strategy = 'loose'  
+for strategy in strategy_list:
 
-# 日志记录
-log = open('log.txt','a')
-log.write(f'{code6},{name},strategy:{strategy}：↓ [pop,ntl,combo]\n')
-print(f'{code6},{name},strategy:{strategy}：↓ [pop,ntl,combo]\n')
 
-while True:
+    preprocessing(code6,name)
+    file_patch_urban = get_buffer_urban_patch(name,1) # 获取初始斑块
+    threshold_pop,threshold_ntl,threshold_combo = get_threshold(name,file_patch_urban,1)
 
-    times += 1
 
-    new_urban_patch = get_buffer_urban_patch(name,radius)
-    current_pop,current_ntl,current_combo = get_ring_value(name,file_patch_urban,new_urban_patch,radius)
-    print(f'round:{times} -=> radius={radius},\n\t thres:{threshold_pop},{threshold_ntl},{threshold_combo} \n\t current:{current_pop},{current_ntl},{current_combo}\n')
-    log.write(f'round:{times} -=> radius={radius},\n\t thres:{threshold_pop},{threshold_ntl},{threshold_combo} \n\t current:{current_pop},{current_ntl},{current_combo}\n')
-    decide = strategy_deside(strategy,threshold_pop,threshold_ntl,threshold_combo,current_pop,current_ntl,current_combo)
-    if decide:
-        file_patch_urban = new_urban_patch
-        threshold_pop,threshold_ntl,threshold_combo = get_threshold(name,file_patch_urban,radius)
-        radius += step
-        continue
-    else:
-        finally_urban = file_patch_urban
-        copy_polygon_to_result(name,finally_urban,radius,strategy)
-        print(f'>>>>>>> urban radius = {radius}\n\n')
-        log.write(f'>>>>>>> urban radius = {radius}\n\n')
-        break
+    # setup variable
+    times = 0
+    step = 15
+    radius = 15
 
-log.close()
+    # strategy = 'loose'  
+
+
+    # 日志记录
+    log = open('log.txt','a')
+    log.write(f'{code6},{name},strategy:{strategy}：↓ [pop,ntl,combo]\n')
+    print(f'{code6},{name},strategy:{strategy}：↓ [pop,ntl,combo]\n')
+
+    while True:
+
+        times += 1
+
+        new_urban_patch = get_buffer_urban_patch(name,radius)
+        current_pop,current_ntl,current_combo = get_ring_value(name,file_patch_urban,new_urban_patch,radius)
+        print(f'round:{times} -=> radius={radius},\n\t thres:{threshold_pop},{threshold_ntl},{threshold_combo} \n\t current:{current_pop},{current_ntl},{current_combo}\n')
+        log.write(f'round:{times} -=> radius={radius},\n\t thres:{threshold_pop},{threshold_ntl},{threshold_combo} \n\t current:{current_pop},{current_ntl},{current_combo}\n')
+        decide = strategy_deside(strategy,threshold_pop,threshold_ntl,threshold_combo,current_pop,current_ntl,current_combo)
+        if decide:
+            file_patch_urban = new_urban_patch
+            threshold_pop,threshold_ntl,threshold_combo = get_threshold(name,file_patch_urban,radius)
+            radius += step
+            continue
+        else:
+            finally_urban = file_patch_urban
+            copy_polygon_to_result(name,finally_urban,radius,strategy)
+            print(f'>>>>>>> urban radius = {radius-15}\n\n')
+            log.write(f'>>>>>>> urban radius = {radius-15}\n\n')
+            break
+
+    log.close()
 
 
 
