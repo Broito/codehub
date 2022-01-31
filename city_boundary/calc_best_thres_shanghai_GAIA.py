@@ -203,7 +203,7 @@ def copy_polygon_to_result(county_name,best_thres):
 # 获取六普人口和城市化率
 df = pd.read_csv('census6_main.csv',encoding = 'gb18030')
 df.index = df['code6']
-code6 = 500100
+code6 = 110100
 name = df.loc[code6,'城市名']
 pop6 = df.loc[code6,'总人口']
 urban6 = df.loc[code6,'市人口']
