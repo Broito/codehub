@@ -141,6 +141,10 @@ def get_ring_value(county_name,certain_urban,new_urban_patch,radius):
     # 计算三个判别值
     mean_pop_ring = zonal(file_merged_ring,'Id',file_extracted_pop)
     mean_ntl_ring = zonal(file_merged_ring,'Id',file_ntl)
+    if mean_pop_ring == None:
+        mean_pop_ring = 0
+    if mean_ntl_ring == None:
+        mean_ntl_ring = 0
     combo_ring = mean_pop_ring*mean_ntl_ring
 
     return mean_pop_ring,mean_ntl_ring,combo_ring
@@ -162,9 +166,17 @@ def get_threshold(county_name,certain_urban,radius):
     # zonal生成各斑块上的人口
     mean_pop_urban = zonal(file_merged_urban,'Id',file_extracted_pop)
     mean_pop_rural = zonal(file_merged_rural,'Id',file_extracted_pop)
+    if mean_pop_urban == None:
+        mean_pop_urban = 0
+    if mean_pop_rural == None:
+        mean_pop_rural = 0
     # zonal生成各斑块上的夜间灯光
     mean_ntl_urban = zonal(file_merged_urban,'Id',file_ntl)
     mean_ntl_rural = zonal(file_merged_rural,'Id',file_ntl)
+    if mean_ntl_urban == None:
+        mean_ntl_urban = 0
+    if mean_ntl_rural == None:
+        mean_ntl_rural = 0
 
     # 计算三个指标
     threshold_pop = math.sqrt(mean_pop_urban*mean_pop_rural)
@@ -217,9 +229,9 @@ def copy_polygon_to_result(county_name,selected_file,thres,strategy):
 
 # %%  <<<<<<<<<<<<<<<<<<<<<<<<<<<-----运行部分----->>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # 获取六普人口和城市化率
-df = pd.read_csv('census6_main.csv',encoding = 'gb18030')
+df = pd.read_csv('pref_gov_exist.csv',encoding = 'gb18030')
 df.index = df['code6']
-df = df[df.loc[:,'行政等级']==1] # 选出来地级市
+# df = df[df.loc[:,'行政等级']==1] # 选出来地级市
 
 count = 1
 start_time = datetime.now()
@@ -280,8 +292,10 @@ for i in lst_df:
     
         log.write(f'==========>{count}//{len(lst_df)},{code6},{name}  \n time:{(datetime.now()-start_time).seconds/60} min\n\n')
         log.close()
+    
+    count += 1
 
-df.to_excel('result_pref_stretegy_search.xlsx')
+df.to_excel('result_pref_stretegy_search2.xlsx')
 
 
 

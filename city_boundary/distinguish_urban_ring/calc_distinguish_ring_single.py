@@ -83,7 +83,7 @@ def preprocessing(county_code6,county_name):
     conned.save(file_con)
 
     # 先收缩后膨胀
-    shrink_radius = 1
+    shrink_radius = 2
     file_shrink = f'{county_name}_shrink{shrink_radius}_urban.tif'
     layer_shrink = Shrink(file_con,shrink_radius,1)
     layer_shrink.save(file_shrink)
@@ -216,14 +216,18 @@ def copy_polygon_to_result(county_name,selected_file,thres,strategy):
 # 获取六普人口和城市化率
 df = pd.read_csv('census6_main.csv',encoding = 'gb18030')
 df.index = df['code6']
-code6 = 110100
+# 选出来地级市
+df = df[df.loc[:,'行政等级']==1]
+code6 = 130800
 name = df.loc[code6,'城市名']
+
+preprocessing(code6,name)
 
 strategy_list = ['loose','strict','combo','only_pop','only_ntl']
 for strategy in strategy_list:
 
 
-    preprocessing(code6,name)
+
     file_patch_urban = get_buffer_urban_patch(name,1) # 获取初始斑块
     threshold_pop,threshold_ntl,threshold_combo = get_threshold(name,file_patch_urban,1)
 
