@@ -51,6 +51,18 @@ def select_by_location(target_file,ref_file,output_file):
     SelectLayerByLocation_management("lyr_target", 'intersect',"lyr_ref")
     CopyFeatures_management("lyr_target", output_file)
 
+# 判别策略选择宽松原则
+def strategy_loose(threshold_pop,threshold_ntl,current_pop,current_ntl):    
+    if current_pop < threshold_pop and current_ntl < threshold_ntl:
+        return False
+    else:
+        return True
+
+def copy_polygon_to_result(city_name,selected_file,thres,strategy):
+    out_path = f'.\\result_folder\\{strategy}\\'
+    out_selected_file = f'{city_name}_urban_{strategy}_{thres}.shp'
+    CopyFeatures_management(selected_file,out_path+out_selected_file)
+
 # <-----------------------------运行模块-------------------------------->
 # %% 
 def preprocessing(city_code,city_name):
@@ -149,6 +161,7 @@ def get_init_urban_patch(ori_patch,city_name):
 
     return file_init_urban_polygon
 
+# %% 合并2km以内的初始版块，并按从大到小排序
 def merge_and_sort_init_patches(multi_shp,city_name):
     # 提取出来几何对象
     patch_list = extract_geometry(multi_shp)
@@ -167,52 +180,23 @@ def merge_and_sort_init_patches(multi_shp,city_name):
         return new_list
     
     result_polygons = proximity_merge(patch_list)
+    result_polygons.sort(key = lambda a: a.area, reverse=True) # 按照面积的从大到小排序
+    result_shp = []
 
     # 将独立斑块的几何对象全部单独新建要素类
     n = 1
     for p_indep in result_polygons:
-        indep_name = f'./init_patch/{city_name}_init_partial_patch_{n}.shp'
+        indep_name = f'{city_name}_init_partial_patch_{n}.shp'
         CopyFeatures_management(p_indep,indep_name)
+        result_shp.append(indep_name)
         n += 1
 
-# %% 拆分地级市单元中的所有斑块，并分辨出主城区
-def single_shp_to_multi(multi_shp,city_name):
-
-    # 提取出几何对象并按照面积排序
-    fields = ['SHAPE@']
-    patch_list = []
-    cur = da.SearchCursor(multi_shp,fields)
-    for row in cur:
-        patch_list.append((row[0]))
-    del cur
-    patch_list.sort(key = lambda a: a.area, reverse=True) # 按照面积的从大到小排序
-    main_patch_geo = patch_list[0]
-    indep_patch_geos = []
-    # 将斑块都拿出来看看是否有与buffer重合的
-    for patch in patch_list[1:]:
-        geometry = patch
-        # print(main_patch_buffer.overlaps(geometry))
-        print(main_patch_geo.distanceTo(geometry))
-        if main_patch_geo.distanceTo(geometry) <= 2000:
-            main_patch_geo = main_patch_geo.union(geometry)
-        else:
-            indep_patch_geos.append(geometry)
-    # 将主城区的几何对象导出为独立要素
-    main_patch = f'./init_patch_2km/{city_name}_init_main_patch.shp'
-    CopyFeatures_management(main_patch_geo,main_patch)
-    # 将独立斑块的几何对象全部单独新建要素类
-    n = 1
-    for p_indep in indep_patch_geos:
-        indep_name = f'./init_patch_2km/{city_name}_init_partial_patch_{n}.shp'
-        CopyFeatures_management(p_indep,indep_name)
-        n += 1
-    
-    return [main_patch_geo]+indep_patch_geos 
+    return result_polygons,result_shp
 
 # %% radius下的斑块扩张，返回扩张后的斑块
 def get_buffer_urban_patch(total_patch,init_urban_patch,radius):
 
-    # 斑块名字（序号）为去掉后缀的
+    # 斑块名字（序号）为去掉后缀的,这里指初始斑块
     patch_name = init_urban_patch[:-4]
 
     # 作buffer
@@ -255,9 +239,14 @@ def get_ring_value(city_name,certain_urban,new_urban_patch,radius):
     # 计算三个判别值
     mean_pop_ring = zonal(file_merged_ring,'Id',file_extracted_pop)
     mean_ntl_ring = zonal(file_merged_ring,'Id',file_ntl)
-    combo_ring = mean_pop_ring*mean_ntl_ring
 
-    return mean_pop_ring,mean_ntl_ring,combo_ring
+    # 防止None出现
+    if mean_pop_ring == None:
+        mean_pop_ring = 0
+    if mean_ntl_ring == None:
+        mean_ntl_ring = 0
+
+    return mean_pop_ring,mean_ntl_ring
 
 # %%
 # 获取下一圈层对应的阈值
@@ -278,9 +267,18 @@ def get_threshold(city_name,current_total_patch,certain_urban,radius):
     # zonal生成各斑块上的人口
     mean_pop_urban = zonal(file_merged_urban,'Id',file_extracted_pop)
     mean_pop_rural = zonal(file_merged_rural,'Id',file_extracted_pop)
+    if mean_pop_urban == None:
+        mean_pop_urban = 0
+    if mean_pop_rural == None:
+        mean_pop_rural = 0
+    
     # zonal生成各斑块上的夜间灯光
     mean_ntl_urban = zonal(file_merged_urban,'Id',file_ntl)
     mean_ntl_rural = zonal(file_merged_rural,'Id',file_ntl)
+    if mean_ntl_urban == None:
+        mean_ntl_urban = 0
+    if mean_ntl_rural == None:
+        mean_ntl_rural = 0
 
     # 计算三个指标
     threshold_pop = math.sqrt(mean_pop_urban*mean_pop_rural)
@@ -288,18 +286,61 @@ def get_threshold(city_name,current_total_patch,certain_urban,radius):
 
     return threshold_pop,threshold_ntl
 
-# 判别策略选择宽松原则
-def strategy_loose(threshold_pop,threshold_ntl,current_pop,current_ntl):    
-    if current_pop < threshold_pop and current_ntl < threshold_ntl:
-        return False
-    else:
-        return True
 
-# %% select final polygon
-def copy_polygon_to_result(city_name,selected_file,thres,strategy):
-    out_path = f'.\\result_folder\\{strategy}\\'
-    out_selected_file = f'{city_name}_urban_{strategy}_{thres}.shp'
-    CopyFeatures_management(selected_file,out_path+out_selected_file)
+# %% 计算当前初始斑块所扩张形成的urban
+# patch_name 即urban初始斑块
+def partial_calc(patch_name):
+    name_list = patch_name[:-4].split('_')
+    name_index = name_list[-1]
+    name_city = name_list[0]
+    name = name_city+'_'+name_index
+
+    # 获取当前城市斑块涉及的行政边界
+    current_admin_extent = f'{name}_current_admin_extent_{name_index}.shp'
+    ref_china_county = r'./七普县级区划.shp'
+    select_by_location(ref_china_county,patch_name,current_admin_extent)
+
+    # 获取当前范围的所有斑块（用于限定后面斑块扩张范围和定义rural）
+    current_total_patch = f'{name}_current_total_patch_{name_index}.shp'
+    select_by_location(total_ori_patch,current_admin_extent,current_total_patch)
+
+    # 开始计算urban范围
+    current_urban_patch = patch_name # 最新城市范围，初始化为初始斑块
+    threshold_pop,threshold_ntl = get_threshold(name,current_total_patch,patch_name,1)
+    # setup variable
+    times = 0
+    step = 15
+    radius = 15
+
+    while True:
+        times += 1
+        new_urban_patch = get_buffer_urban_patch(current_total_patch,patch_name,radius)
+        current_pop,current_ntl = get_ring_value(name,current_urban_patch,new_urban_patch,radius)
+        print(f'round:{times} -=> radius={radius},\n\t thres:{threshold_pop},{threshold_ntl} \n\t current:{current_pop},{current_ntl}\n')
+        decide = strategy_loose(threshold_pop, threshold_ntl, current_pop, current_ntl)
+        if decide:
+            current_urban_patch = new_urban_patch
+            threshold_pop,threshold_ntl = get_threshold(name,current_total_patch,current_urban_patch,radius)
+            radius += step
+            continue
+        else:
+            final_urban = current_urban_patch
+            break
+    
+    return final_urban
+
+# %% 将单个斑块扩张后的结果合并至总的结果
+def merge_partial_to_total(partial_name,total_result_name):
+
+    # 先将分步结果merge到总结果
+    merged_total = partial_name[:-4]+f'_merged_total.shp'
+    Merge_management([partial_name,total_result_name],merged_total)
+
+    # 再dissolve总结果为一个geometry
+    dissolved_total = partial_name[:-4]+f'_dissolved_total.shp'
+    Dissolve_management(merged_total,dissolved_total)
+
+    return dissolved_total
 
 # %%  <<<<<<<<<<<<<<<<<<<<<<<<<<<-----运行部分----->>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # 获取六普人口和城市化率
@@ -312,25 +353,35 @@ name = df.loc[prefcode7,'Name']
 # 预处理
 total_ori_patch = preprocessing(prefcode7,name) # 返回该地级市内的所有斑块
 total_init_gov_urban = get_init_urban_patch(total_ori_patch,name) # 返回政府所在地的所有斑块
-ori_init_urban_patches = single_shp_to_multi(total_init_gov_urban,name) # 返回按面积排序的原始城区geometry列表
-finished_patch = [] # 已扩张完成的斑块，用于检验后面的郊区和县的斑块是不是已经被前面的斑块吞并了
+ori_init_urban_patch_geometry,ori_init_urban_shps = merge_and_sort_init_patches(total_init_gov_urban,name) # 返回按面积排序的原始城区geometry列表
 
-# 初始主城区的扩张 <---------------------------------------------------------------
+# 当前城市斑块（不断更新，直到最终版）
+current_urban_polygon =  total_init_gov_urban
 
-# 当前城市斑块（不断更新，知道最终版）
-current_urban_polygon =  f'{name}_current_urban_polygon.shp'
-CopyFeatures_management(f'./init_patch_2km/{name}_init_main_patch.shp',current_urban_polygon)
+# 计算第一块扩张结果
+patch_sprawl_result = partial_calc(ori_init_urban_shps[0])
+# 将第1块扩张结果汇总至 current_urban_polygon 最新总斑块
+current_urban_polygon = merge_partial_to_total(patch_sprawl_result,current_urban_polygon)
+# 已建成urban的geometry（单个）
+finished_geometry = extract_geometry(current_urban_polygon)[0]
 
-# 获取当前城市斑块涉及的行政边界
-current_admin_extent = f'{name}_current_admin_extent.shp'
-ref_china_county = r'./七普县级区划.shp'
-select_by_location(ref_china_county,current_urban_polygon,current_admin_extent)
+#循环每一个初始斑块，开始扩张
+for patch_shp,patch_geo in zip(ori_init_urban_shps[1:],ori_init_urban_patch_geometry[1:]):
+    # 判断当前初始斑块是否已经被现有城区吞并    
+    if patch_geo.overlaps(finished_geometry):
+        continue
+    #计算得到第n块的扩张结果
+    patch_sprawl_result = partial_calc(patch_shp) 
+    # 将第n块扩张结果汇总至 current_urban_polygon 最新总斑块
+    current_urban_polygon = merge_partial_to_total(patch_sprawl_result,current_urban_polygon)
+    finished_geometry = extract_geometry(current_urban_polygon)
+    
+print(current_urban_polygon)
 
-# 获取当前范围的所有斑块（用于限定后面斑块扩张范围和定义rural）
-current_total_patch = f'{name}_current_total_patch.shp'
-select_by_location(total_ori_patch,current_admin_extent,current_admin_extent)
 
-# 
+
+
+
 
 
 
