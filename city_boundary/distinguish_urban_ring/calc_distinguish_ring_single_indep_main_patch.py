@@ -13,7 +13,6 @@ os.chdir(r'E:\\workspace\\Research_2022_city_boundary\\distinguish_ring')
 env.workspace = r'E:\workspace\Research_2022_city_boundary\distinguish_ring\temp_workspace'
 env.overwriteOutput = True
 
-# <------------------------ 小工具-------------------------->
 # %% 这里的zonal是取均值（忽略空值）
 def zonal(polygon,polygon_field,raster):
     try:
@@ -35,24 +34,7 @@ def select_region(code6):
         if prov_code == tif[:2]:
             return tif
 
-# 从shp里提取geometry，返回geometry列表
-def extract_geometry(shp):
-    geo_list = []
-    cur = da.SearchCursor(shp,['SHAPE@'])
-    for row in cur:
-        geo_list.append(row[0])
-    del cur
-    return geo_list
-
-def select_by_location(target_file,ref_file,output_file):
-    # 选中存在有政府的buffer斑块
-    MakeFeatureLayer_management(target_file, "lyr_target")
-    MakeFeatureLayer_management(ref_file, "lyr_ref")
-    SelectLayerByLocation_management("lyr_target", 'intersect',"lyr_ref")
-    CopyFeatures_management("lyr_target", output_file)
-
-# <-----------------------------运行模块-------------------------------->
-# %% 
+# %%
 def preprocessing(city_code,city_name):
 
     # 选择需要进行操作的地区矢量
@@ -149,31 +131,36 @@ def get_init_urban_patch(ori_patch,city_name):
 
     return file_init_urban_polygon
 
-def merge_and_sort_init_patches(multi_shp,city_name):
-    # 提取出来几何对象
-    patch_list = extract_geometry(multi_shp)
-    
-    def proximity_merge(p_list):
-        new_list = p_list[:] # 复制一个用于修改
-        for p_index in range(len(p_list)):
-            for p_ref_index in range(len(p_list)):
-                dis = new_list[p_index].distanceTo(new_list[p_ref_index])
-                print(f'dis = {dis}')
-                if  dis > 0 and dis < 2000:
-                    new_list[p_index] = new_list[p_index].union(new_list[p_ref_index])
-                    new_list.remove(new_list[p_ref_index])
-                    print('merged\n')
-                    return proximity_merge(new_list)
-        return new_list
-    
-    result_polygons = proximity_merge(patch_list)
+# %% radius下的斑块扩张，返回扩张后的斑块
+def get_buffer_urban_patch(ori_patch,radius):
 
-    # 将独立斑块的几何对象全部单独新建要素类
-    n = 1
-    for p_indep in result_polygons:
-        indep_name = f'./init_patch/{city_name}_init_partial_patch_{n}.shp'
-        CopyFeatures_management(p_indep,indep_name)
-        n += 1
+    # 斑块名字（序号）为去掉后缀的
+    patch_name = ori_patch[:-4]
+
+    # 作buffer
+    file_buffer = f'{patch_name}_buffer_{radius}.shp'
+    Buffer_analysis(ori_patch,file_buffer,f'{radius} Meters')
+
+    # dissolve
+    file_dissolved_buffer = f'{patch_name}_dissolve_{radius}.shp'
+    Dissolve_management(file_buffer,file_dissolved_buffer)
+
+    # explode
+    file_explode_buffer = f'{patch_name}_explode_{radius}.shp'
+    MultipartToSinglepart_management(file_dissolved_buffer,file_explode_buffer)
+
+    # 选中存在有政府的buffer斑块
+    file_buffer_contain_gov = f'{patch_name}_{radius}_buffer_gov.shp'
+    MakeFeatureLayer_management(file_explode_buffer, "lyr_buffer")
+    MakeFeatureLayer_management(file_gov, "lyr_gov")
+    SelectLayerByLocation_management("lyr_buffer", 'intersect',"lyr_gov",'500 Meters')
+    CopyFeatures_management("lyr_buffer", file_buffer_contain_gov)
+
+    # 选中未buffer的原始斑块，代表在radius下，这些斑块属于urban area
+    file_patch_urban = f'{patch_name}_urban_{radius}.shp'
+    Intersect_analysis([ori_patch,file_buffer_contain_gov],file_patch_urban)
+    
+    return file_patch_urban
 
 # %% 拆分地级市单元中的所有斑块，并分辨出主城区
 def single_shp_to_multi(multi_shp,city_name):
@@ -206,39 +193,7 @@ def single_shp_to_multi(multi_shp,city_name):
         indep_name = f'./init_patch_2km/{city_name}_init_partial_patch_{n}.shp'
         CopyFeatures_management(p_indep,indep_name)
         n += 1
-    
-    return [main_patch_geo]+indep_patch_geos 
 
-# %% radius下的斑块扩张，返回扩张后的斑块
-def get_buffer_urban_patch(total_patch,init_urban_patch,radius):
-
-    # 斑块名字（序号）为去掉后缀的
-    patch_name = init_urban_patch[:-4]
-
-    # 作buffer
-    file_buffer = f'{patch_name}_buffer_{radius}.shp'
-    Buffer_analysis(total_patch,file_buffer,f'{radius} Meters')
-
-    # dissolve
-    file_dissolved_buffer = f'{patch_name}_dissolve_{radius}.shp'
-    Dissolve_management(file_buffer,file_dissolved_buffer)
-
-    # explode
-    file_explode_buffer = f'{patch_name}_explode_{radius}.shp'
-    MultipartToSinglepart_management(file_dissolved_buffer,file_explode_buffer)
-
-    # 选中存在有政府的buffer斑块
-    file_buffer_contain_init_urban = f'{patch_name}_{radius}_buffer_init_urban.shp'
-    MakeFeatureLayer_management(file_explode_buffer, "lyr_buffer")
-    MakeFeatureLayer_management(init_urban_patch, "lyr_init_urban")
-    SelectLayerByLocation_management("lyr_buffer", 'intersect',"lyr_init_urban")
-    CopyFeatures_management("lyr_buffer", file_buffer_contain_init_urban)
-
-    # 选中未buffer的原始斑块，代表在radius下，这些斑块属于urban area
-    file_patch_urban = f'{patch_name}_urban_{radius}.shp'
-    Intersect_analysis([total_patch,file_buffer_contain_init_urban],file_patch_urban)
-    
-    return file_patch_urban
 
 # %%
 # 获得当前环带的三个判别值
@@ -259,15 +214,13 @@ def get_ring_value(city_name,certain_urban,new_urban_patch,radius):
 
     return mean_pop_ring,mean_ntl_ring,combo_ring
 
-# %%
-# 获取下一圈层对应的阈值
-def get_threshold(city_name,current_total_patch,certain_urban,radius):
+def get_threshold(city_name,certain_urban,radius):
 
     file_patch_urban = certain_urban
 
     # rural_patch = total patch - urban_patch
     file_patch_rural = f'{city_name}_rural_{radius}.shp'
-    Erase_analysis(current_total_patch,file_patch_urban,file_patch_rural)
+    Erase_analysis(file_urban_polygon,file_patch_urban,file_patch_rural)
 
     # merge urban斑块和rural斑块，用来下一步直接zonal求mean 
     file_merged_urban = f'{city_name}_merged_urban_{radius}.shp'
@@ -288,7 +241,6 @@ def get_threshold(city_name,current_total_patch,certain_urban,radius):
 
     return threshold_pop,threshold_ntl
 
-# 判别策略选择宽松原则
 def strategy_loose(threshold_pop,threshold_ntl,current_pop,current_ntl):    
     if current_pop < threshold_pop and current_ntl < threshold_ntl:
         return False
@@ -306,33 +258,21 @@ def copy_polygon_to_result(city_name,selected_file,thres,strategy):
 df = pd.read_csv('七普地级市.csv',encoding = 'gb18030')
 df.index = df['prefcodeF7']
 
-prefcode7 = 4503
-name = df.loc[prefcode7,'Name']
+# prefcode7 = 4408
+# name = df.loc[prefcode7,'Name']
 
-# 预处理
-total_ori_patch = preprocessing(prefcode7,name) # 返回该地级市内的所有斑块
-total_init_gov_urban = get_init_urban_patch(total_ori_patch,name) # 返回政府所在地的所有斑块
-ori_init_urban_patches = single_shp_to_multi(total_init_gov_urban,name) # 返回按面积排序的原始城区geometry列表
-finished_patch = [] # 已扩张完成的斑块，用于检验后面的郊区和县的斑块是不是已经被前面的斑块吞并了
+# total_ori_patch = preprocessing(prefcode7,name) # 返回该地级市内的所有斑块
+# total_init_gov_urban = get_init_urban_patch(total_ori_patch,name) # 返回政府所在地的所有斑块
+# single_shp_to_multi(total_init_gov_urban,name)
 
-# 初始主城区的扩张 <---------------------------------------------------------------
+code7_list = [1101,1201,1304,1402,1506,2203,3301,3101,3204,3302,3301,3408,3701,4113,4201,4211,4301,4401,4403,4408,4503,5116,5202]
+for prefcode7 in code7_list:
+    name = df.loc[prefcode7,'Name']
 
-# 当前城市斑块（不断更新，知道最终版）
-current_urban_polygon =  f'{name}_current_urban_polygon.shp'
-CopyFeatures_management(f'./init_patch_2km/{name}_init_main_patch.shp',current_urban_polygon)
-
-# 获取当前城市斑块涉及的行政边界
-current_admin_extent = f'{name}_current_admin_extent.shp'
-ref_china_county = r'./七普县级区划.shp'
-select_by_location(ref_china_county,current_urban_polygon,current_admin_extent)
-
-# 获取当前范围的所有斑块（用于限定后面斑块扩张范围和定义rural）
-current_total_patch = f'{name}_current_total_patch.shp'
-select_by_location(total_ori_patch,current_admin_extent,current_admin_extent)
-
-# 
-
-
+    total_ori_patch = preprocessing(prefcode7,name) # 返回该地级市内的所有斑块
+    total_init_gov_urban = get_init_urban_patch(total_ori_patch,name) # 返回政府所在地的所有斑块
+    single_shp_to_multi(total_init_gov_urban,name)
+    print(name)
 
 
 

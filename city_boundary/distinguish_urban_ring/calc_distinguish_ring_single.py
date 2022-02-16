@@ -218,7 +218,7 @@ df = pd.read_csv('census6_main.csv',encoding = 'gb18030')
 df.index = df['code6']
 # 选出来地级市
 df = df[df.loc[:,'行政等级']==1]
-code6 = 130800
+code6 = 610200
 name = df.loc[code6,'城市名']
 
 preprocessing(code6,name)

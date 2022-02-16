@@ -1,6 +1,6 @@
 # %%
-from arcpy import *
 import os
+from arcpy import *
 from arcpy.analysis import Intersect
 from arcpy.sa.Functions import ExtractByMask, ZonalStatisticsAsTable
 from arcpy.sa import Con, Shrink, Expand
@@ -73,7 +73,9 @@ def preprocessing(county_code6,county_name):
     conned = Con(file_landuse_county,1,"","VALUE > 7")
     conned.save(file_con)
 
-    # 先收缩后膨胀
+    # 防止收缩没了，来个try
+    # try:
+        # 先收缩后膨胀
     shrink_radius = 2
     file_shrink = f'{county_name}_shrink{shrink_radius}_urban.tif'
     layer_shrink = Shrink(file_con,shrink_radius,1)
@@ -87,6 +89,13 @@ def preprocessing(county_code6,county_name):
     global file_urban_polygon
     file_urban_polygon = f'{county_name}_ori_urban_polygon.shp'
     RasterToPolygon_conversion(file_expand, file_urban_polygon, "NO_SIMPLIFY")
+    
+    # except:
+        
+    #     global file_urban_polygon
+    #     file_urban_polygon = f'{county_name}_ori_urban_polygon.shp'
+    #     RasterToPolygon_conversion(file_con, file_urban_polygon, "NO_SIMPLIFY")
+
 
     # 计算不透水面总人口
     impervious_pop = zonal(file_urban_polygon,'Id',file_extracted_pop)
@@ -212,7 +221,7 @@ df.index = df['code6']
 
 count = 1
 start_time = datetime.now()
-lst_df = list(df.iterrows())[72:]
+lst_df = list(df.iterrows())[251:260]
 
 for i in lst_df:
     row = i[1]
@@ -239,4 +248,6 @@ for i in lst_df:
     print(f'{count}//{len(lst_df)},{code6},{name}-->best thres:{best_thres}, --> best residual:{best_residual}.  \n time:{(datetime.now()-start_time).seconds/60} min')
     count += 1
 
-df.to_excel('result_best_thres_GAIA.xlsx')
+df.to_excel('result_best_thres_GAIA2.xlsx')
+
+# %%
