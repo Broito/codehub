@@ -53,14 +53,14 @@ def select_by_location(target_file,ref_file,output_file):
 
 # 判别策略选择宽松原则
 def strategy_loose(threshold_pop,threshold_ntl,current_pop,current_ntl):    
-    if current_pop < threshold_pop and current_ntl < threshold_ntl:
+    if current_pop <= threshold_pop and current_ntl <= threshold_ntl:
         return False
     else:
         return True
 
-def copy_polygon_to_result(city_name,selected_file,thres,strategy):
-    out_path = f'.\\result_folder\\{strategy}\\'
-    out_selected_file = f'{city_name}_urban_{strategy}_{thres}.shp'
+def copy_polygon_to_result(city_name,selected_file):
+    out_path = f'.\\result_folder\\'
+    out_selected_file = f'{city_name}_urban.shp'
     CopyFeatures_management(selected_file,out_path+out_selected_file)
 
 # <-----------------------------运行模块-------------------------------->
@@ -171,11 +171,9 @@ def merge_and_sort_init_patches(multi_shp,city_name):
         for p_index in range(len(p_list)):
             for p_ref_index in range(len(p_list)):
                 dis = new_list[p_index].distanceTo(new_list[p_ref_index])
-                print(f'dis = {dis}')
                 if  dis > 0 and dis < 2000:
                     new_list[p_index] = new_list[p_index].union(new_list[p_ref_index])
                     new_list.remove(new_list[p_ref_index])
-                    print('merged\n')
                     return proximity_merge(new_list)
         return new_list
     
@@ -301,12 +299,20 @@ def partial_calc(patch_name):
     select_by_location(ref_china_county,patch_name,current_admin_extent)
 
     # 获取当前范围的所有斑块（用于限定后面斑块扩张范围和定义rural）
+    # 当前用于计算的所有斑块 = 区划内所有斑块 - 全局已确定的urban斑块 + 该区划内初始urban斑块
+    # 区划内所有斑块
+    within_extent_total_patch = f'{name}_within_extent_total_patch_{name_index}.shp'
+    select_by_location(total_ori_patch,current_admin_extent,within_extent_total_patch)
+    # 去掉全局已确定的urban斑块
+    within_extent_non_urban_patch = f'{name}_within_extent_non_urban_patch_{name_index}.shp'
+    Erase_analysis(within_extent_total_patch,current_urban_polygon,within_extent_non_urban_patch)
+    # 再加上该区划内初始urban斑块，得到最终用于计算的所有斑块
     current_total_patch = f'{name}_current_total_patch_{name_index}.shp'
-    select_by_location(total_ori_patch,current_admin_extent,current_total_patch)
+    Merge_management([within_extent_non_urban_patch,patch_name],current_total_patch)
 
     # 开始计算urban范围
     current_urban_patch = patch_name # 最新城市范围，初始化为初始斑块
-    threshold_pop,threshold_ntl = get_threshold(name,current_total_patch,patch_name,1)
+    threshold_pop,threshold_ntl = get_threshold(name,current_total_patch,current_urban_patch,1)
     # setup variable
     times = 0
     step = 15
@@ -347,7 +353,7 @@ def merge_partial_to_total(partial_name,total_result_name):
 df = pd.read_csv('七普地级市.csv',encoding = 'gb18030')
 df.index = df['prefcodeF7']
 
-prefcode7 = 4503
+prefcode7 = 3101
 name = df.loc[prefcode7,'Name']
 
 # 预处理
@@ -374,9 +380,10 @@ for patch_shp,patch_geo in zip(ori_init_urban_shps[1:],ori_init_urban_patch_geom
     patch_sprawl_result = partial_calc(patch_shp) 
     # 将第n块扩张结果汇总至 current_urban_polygon 最新总斑块
     current_urban_polygon = merge_partial_to_total(patch_sprawl_result,current_urban_polygon)
-    finished_geometry = extract_geometry(current_urban_polygon)
+    finished_geometry = extract_geometry(current_urban_polygon)[0]
     
 print(current_urban_polygon)
+copy_polygon_to_result(name,current_urban_polygon)
 
 
 
