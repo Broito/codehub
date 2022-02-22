@@ -10,7 +10,7 @@ import numpy as np
 import math
 
 os.chdir(r'E:\\workspace\\Research_2022_city_boundary\\distinguish_ring')
-env.workspace = r'E:\workspace\Research_2022_city_boundary\distinguish_ring\temp_workspace'
+env.workspace = r'E:\workspace\Research_2022_city_boundary\distinguish_ring\temp_workspace_2'
 env.overwriteOutput = True
 
 # <------------------------ 小工具-------------------------->
@@ -59,7 +59,7 @@ def strategy_loose(threshold_pop,threshold_ntl,current_pop,current_ntl):
         return True
 
 def copy_polygon_to_result(city_name,selected_file):
-    out_path = f'.\\result_folder\\'
+    out_path = f'.\\result_folder_2\\'
     out_selected_file = f'{city_name}_urban.shp'
     CopyFeatures_management(selected_file,out_path+out_selected_file)
 
@@ -80,7 +80,7 @@ def preprocessing(city_code,city_name):
     # 选择所在省份栅格
     tif_path = r'I:\\DataHub\\Landuse_GAIA\\Urban and rural\\'
     ori_landuse = tif_path + select_region(city_code)
-    env.workspace = r'.\temp_workspace'
+    env.workspace = r'.\temp_workspace_2'
     # 裁切城市栅格
     file_landuse_city = f'{city_name}_landuse.tif'
     extracted = ExtractByMask(ori_landuse,file_selected_city)
@@ -313,6 +313,7 @@ def partial_calc(patch_name):
     # 开始计算urban范围
     current_urban_patch = patch_name # 最新城市范围，初始化为初始斑块
     threshold_pop,threshold_ntl = get_threshold(name,current_total_patch,current_urban_patch,1)
+
     # setup variable
     times = 0
     step = 15
@@ -320,9 +321,17 @@ def partial_calc(patch_name):
 
     while True:
         times += 1
+        # 如果此时阈值有一个变成了0（rural区域变成0了）或者radius太长了，直到间隔500m（radius = 250m）
+        if threshold_pop == 0 or threshold_ntl ==0 or radius >= 250:
+            final_urban = current_urban_patch
+            break
         new_urban_patch = get_buffer_urban_patch(current_total_patch,patch_name,radius)
         current_pop,current_ntl = get_ring_value(name,current_urban_patch,new_urban_patch,radius)
         print(f'round:{times} -=> radius={radius},\n\t thres:{threshold_pop},{threshold_ntl} \n\t current:{current_pop},{current_ntl}\n')
+        # 如果此圈层没有要素，那么继续下一圈层
+        if current_pop == 0 and current_ntl == 0:
+            radius += step
+            continue
         decide = strategy_loose(threshold_pop, threshold_ntl, current_pop, current_ntl)
         if decide:
             current_urban_patch = new_urban_patch
@@ -353,7 +362,7 @@ def merge_partial_to_total(partial_name,total_result_name):
 df = pd.read_csv('七普地级市.csv',encoding = 'gb18030')
 df.index = df['prefcodeF7']
 
-prefcode7 = 3101
+prefcode7 = 1101
 name = df.loc[prefcode7,'Name']
 
 # 预处理
