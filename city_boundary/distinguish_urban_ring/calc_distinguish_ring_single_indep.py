@@ -10,7 +10,7 @@ import numpy as np
 import math
 
 os.chdir(r'E:\\workspace\\Research_2022_city_boundary\\distinguish_ring')
-env.workspace = r'E:\workspace\Research_2022_city_boundary\distinguish_ring\temp_workspace_2'
+env.workspace = r'E:\workspace\Research_2022_city_boundary\distinguish_ring\temp_workspace'
 env.overwriteOutput = True
 
 # <------------------------ 小工具-------------------------->
@@ -59,7 +59,7 @@ def strategy_loose(threshold_pop,threshold_ntl,current_pop,current_ntl):
         return True
 
 def copy_polygon_to_result(city_name,selected_file):
-    out_path = f'.\\result_folder_2\\'
+    out_path = f'.\\result_folder\\'
     out_selected_file = f'{city_name}_urban.shp'
     CopyFeatures_management(selected_file,out_path+out_selected_file)
 
@@ -80,7 +80,7 @@ def preprocessing(city_code,city_name):
     # 选择所在省份栅格
     tif_path = r'I:\\DataHub\\Landuse_GAIA\\Urban and rural\\'
     ori_landuse = tif_path + select_region(city_code)
-    env.workspace = r'.\temp_workspace_2'
+    env.workspace = r'.\temp_workspace'
     # 裁切城市栅格
     file_landuse_city = f'{city_name}_landuse.tif'
     extracted = ExtractByMask(ori_landuse,file_selected_city)
@@ -112,7 +112,7 @@ def preprocessing(city_code,city_name):
     conned.save(file_con)
 
     # 先收缩后膨胀
-    shrink_radius = 2
+    shrink_radius = 1
     file_shrink = f'{city_name}_shrink{shrink_radius}_urban.tif'
     layer_shrink = Shrink(file_con,shrink_radius,1)
     layer_shrink.save(file_shrink)
@@ -316,8 +316,8 @@ def partial_calc(patch_name):
 
     # setup variable
     times = 0
-    step = 15
-    radius = 15
+    step = 30
+    radius = 30
 
     while True:
         times += 1
