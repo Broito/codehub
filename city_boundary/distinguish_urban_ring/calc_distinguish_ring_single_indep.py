@@ -51,6 +51,11 @@ def select_by_location(target_file,ref_file,output_file):
     SelectLayerByLocation_management("lyr_target", 'intersect',"lyr_ref")
     CopyFeatures_management("lyr_target", output_file)
 
+def select_by_attribute(target_file,where_clause,output_file):
+    MakeFeatureLayer_management(target_file, "lyr_target")
+    SelectLayerByAttribute_management("lyr_target", "NEW_SELECTION",where_clause)
+    CopyFeatures_management("lyr_target", output_file)
+
 # 判别策略选择宽松原则
 def strategy_loose(threshold_pop,threshold_ntl,current_pop,current_ntl):    
     if current_pop <= threshold_pop and current_ntl <= threshold_ntl:
@@ -133,7 +138,7 @@ def preprocessing(city_code,city_name):
     return file_urban_polygon_proj
 
 # %% 选择出初始的政府斑块
-def get_init_urban_patch(ori_patch,city_name):
+def get_init_gov_patch(ori_patch,city_name):
 
     # 作政府点的500mbuffer
     file_gov_buffer = f'{city_name}_gov_buffer.shp'
@@ -156,10 +161,58 @@ def get_init_urban_patch(ori_patch,city_name):
     Dissolve_management(file_joined_ori_urban,file_dissolved_ori_urban,'Id_1')
 
     # 选择出Id_1不是0的区域，即政府所在斑块
-    file_init_urban_polygon = f'{city_name}_init_urban_polygon.shp'
+    file_init_urban_polygon = f'{city_name}_init_gov_polygon.shp'
     Select_analysis(file_dissolved_ori_urban,file_init_urban_polygon,"Id_1 <> 0")
 
     return file_init_urban_polygon
+
+# %% 选出初始的最大斑块
+def get_init_big_patch(ori_patch,city_name,city_code):
+    biggest_patch_list = []
+
+    # 选择出该地级市的所有区县单元
+    ref_china_county = r'./七普县级区划.shp'
+    file_selected_counties = f'{city_name}_counties_polygon.shp'
+    where_clause = f'"prefcode" = {city_code}'
+    select_by_attribute(ref_china_county,where_clause,file_selected_counties)
+
+    # 要知道每个斑块属于哪个区县，同时进行切割
+    file_ori_patch_intersect_county = f'{city_name}_patch_intersect_county.shp'
+    Intersect_analysis([ori_patch,file_selected_counties],file_ori_patch_intersect_county)
+
+    # 挑出每个区县里最大的斑块
+    fields = ['xian']
+    cur = da.SearchCursor(file_selected_counties,fields)
+    for xian in cur:
+        name = xian[0]
+        file_xian_patch = f'{city_name}_{name}_patch.shp'
+        select_by_attribute(file_ori_patch_intersect_county,f'"xian" = \'{name}\'',file_xian_patch)
+        polygons = extract_geometry(file_xian_patch)
+        polygons.sort(key = lambda a: a.area, reverse=True) # 按从大到小排序斑块
+        biggest_patch_list.append(polygons[0])
+    del cur
+
+    file_init_big_patch = f'{city_name}_init_big_polygon.shp'
+    CopyFeatures_management(biggest_patch_list,file_init_big_patch)
+
+    return file_init_big_patch
+        
+# %% 合并政府斑块和最大斑块
+def get_init_urban_patch(ori_patch,city_name,city_code):
+
+    ori_gov_shp = get_init_gov_patch(ori_patch,city_name)
+    ori_big_shp = get_init_big_patch(ori_patch,city_name,city_code)
+
+    file_merge_init_patch = f'{city_name}_init_urban_merged.shp'
+    Merge_management([ori_big_shp,ori_gov_shp],file_merge_init_patch)
+
+    file_dissolved_init_patch = f'{city_name}_init_urban_dissovled.shp'
+    Dissolve_management(file_merge_init_patch,file_dissolved_init_patch)
+
+    file_explode_init_patch = f'{city_name}_init_urban_polygon.shp'
+    MultipartToSinglepart_management(file_dissolved_init_patch,file_explode_init_patch)
+
+    return file_explode_init_patch
 
 # %% 合并2km以内的初始版块，并按从大到小排序
 def merge_and_sort_init_patches(multi_shp,city_name):
@@ -362,16 +415,16 @@ def merge_partial_to_total(partial_name,total_result_name):
 df = pd.read_csv('七普地级市.csv',encoding = 'gb18030')
 df.index = df['prefcodeF7']
 
-prefcode7 = 1101
+prefcode7 = 3201
 name = df.loc[prefcode7,'Name']
 
 # 预处理
 total_ori_patch = preprocessing(prefcode7,name) # 返回该地级市内的所有斑块
-total_init_gov_urban = get_init_urban_patch(total_ori_patch,name) # 返回政府所在地的所有斑块
-ori_init_urban_patch_geometry,ori_init_urban_shps = merge_and_sort_init_patches(total_init_gov_urban,name) # 返回按面积排序的原始城区geometry列表
+total_init_urban = get_init_urban_patch(total_ori_patch,name,prefcode7) # 返回政府所在地的所有斑块
+ori_init_urban_patch_geometry,ori_init_urban_shps = merge_and_sort_init_patches(total_init_urban,name) # 返回按面积排序的原始城区geometry列表
 
 # 当前城市斑块（不断更新，直到最终版）
-current_urban_polygon =  total_init_gov_urban
+current_urban_polygon =  total_init_urban
 
 # 计算第一块扩张结果
 patch_sprawl_result = partial_calc(ori_init_urban_shps[0])
