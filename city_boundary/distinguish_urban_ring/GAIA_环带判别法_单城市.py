@@ -29,7 +29,7 @@ def zonal(polygon,polygon_field,raster):
 # %%选择所在省的栅格，但用完该方法后要记得重新设置env.workspace
 def select_region(code6):
     prov_code = str(code6)[:2]
-    env.workspace = r'I:\DataHub\Landuse_GAIA\Urban and rural'
+    env.workspace = r'I:\DataHub\Landuse_1978_2017\Urban and rural'
     tifs = ListRasters()
     for tif in tifs:
         if prov_code == tif[:2]:
@@ -83,7 +83,7 @@ def preprocessing(city_code,city_name):
     CopyFeatures_management("lyr_cities", file_selected_city)
     
     # 选择所在省份栅格
-    tif_path = r'I:\\DataHub\\Landuse_GAIA\\Urban and rural\\'
+    tif_path = r'I:\\DataHub\\Landuse_1978_2017\\Urban and rural\\'
     ori_landuse = tif_path + select_region(city_code)
     env.workspace = r'.\temp_workspace'
     # 裁切城市栅格
@@ -380,7 +380,7 @@ def partial_calc(patch_name):
             break
         new_urban_patch = get_buffer_urban_patch(current_total_patch,patch_name,radius)
         current_pop,current_ntl = get_ring_value(name,current_urban_patch,new_urban_patch,radius)
-        print(f'round:{times} -=> radius={radius},\n\t thres:{threshold_pop},{threshold_ntl} \n\t current:{current_pop},{current_ntl}\n')
+        # print(f'round:{times} -=> radius={radius},\n\t thres:{threshold_pop},{threshold_ntl} \n\t current:{current_pop},{current_ntl}\n')
         # 如果此圈层没有要素，那么继续下一圈层
         if current_pop == 0 and current_ntl == 0:
             radius += step
@@ -397,7 +397,7 @@ def partial_calc(patch_name):
     
     return final_urban
 
-# %% 将单个斑块扩张后的结果合并至总的结果
+# %% 将单个斑块扩张后的结果合并至总的结果（dissolve，含初始斑块）
 def merge_partial_to_total(partial_name,total_result_name):
 
     # 先将分步结果merge到总结果
@@ -410,12 +410,24 @@ def merge_partial_to_total(partial_name,total_result_name):
 
     return dissolved_total
 
+# %% 将单个斑块扩张后的结果汇总至result（仅merge，不含初始斑块）
+def add_partial_result_to_output_result(partial_name):    
+    # 将分步结果添加到总结果
+    fields = ['SHAPE@']
+    insert_cur = da.InsertCursor(f'.\\result_folder\\'+result_pool,fields)
+    new_polygons = extract_geometry(partial_name)
+    new_polygon = new_polygons[0]
+    for geo in new_polygons[1:]:
+        new_polygon = new_polygon.union(geo)
+    insert_cur.insertRow([new_polygon])
+    del insert_cur
+
 # %%  <<<<<<<<<<<<<<<<<<<<<<<<<<<-----运行部分----->>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # 获取六普人口和城市化率
 df = pd.read_csv('七普地级市.csv',encoding = 'gb18030')
 df.index = df['prefcodeF7']
 
-prefcode7 = 3201
+prefcode7 = 3205
 name = df.loc[prefcode7,'Name']
 
 # 预处理
@@ -430,6 +442,12 @@ current_urban_polygon =  total_init_urban
 patch_sprawl_result = partial_calc(ori_init_urban_shps[0])
 # 将第1块扩张结果汇总至 current_urban_polygon 最新总斑块
 current_urban_polygon = merge_partial_to_total(patch_sprawl_result,current_urban_polygon)
+# 一开始结果为空集，加入初始扩张完成的斑块
+result_pool = f'{name}_urban.shp'
+spatial_reference = arcpy.Describe("E:\workspace\Research_2022_city_boundary\distinguish_ring\七普地级区划.shp").spatialReference
+CreateFeatureclass_management(out_path = f'.\\result_folder\\',out_name = result_pool,spatial_reference = spatial_reference)
+print(patch_sprawl_result)
+add_partial_result_to_output_result(patch_sprawl_result)
 # 已建成urban的geometry（单个）
 finished_geometry = extract_geometry(current_urban_polygon)[0]
 
@@ -442,10 +460,12 @@ for patch_shp,patch_geo in zip(ori_init_urban_shps[1:],ori_init_urban_patch_geom
     patch_sprawl_result = partial_calc(patch_shp) 
     # 将第n块扩张结果汇总至 current_urban_polygon 最新总斑块
     current_urban_polygon = merge_partial_to_total(patch_sprawl_result,current_urban_polygon)
+    print(patch_sprawl_result)
+    add_partial_result_to_output_result(patch_sprawl_result)
     finished_geometry = extract_geometry(current_urban_polygon)[0]
     
-print(current_urban_polygon)
-copy_polygon_to_result(name,current_urban_polygon)
+# print(current_urban_polygon)
+# copy_polygon_to_result(name,result_pool)
 
 
 
