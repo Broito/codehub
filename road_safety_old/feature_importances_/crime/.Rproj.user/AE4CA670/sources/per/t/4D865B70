@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521984805210.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3161313796",
+    "id" : "4D865B70",
+    "lastKnownWriteTime" : 1522154808,
+    "last_content_update" : 1522154808151,
+    "path" : "H:/Crime/Data Analysis/2015 Crimes/Regr_kd/crime/feats_mtry1.R",
+    "project_path" : "feats_mtry1.R",
+    "properties" : {
+        "cursorPosition" : "5,14",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

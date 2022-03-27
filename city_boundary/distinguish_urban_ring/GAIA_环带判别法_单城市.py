@@ -26,15 +26,6 @@ def zonal(polygon,polygon_field,raster):
         return None
     return result
 
-# %%选择所在省的栅格，但用完该方法后要记得重新设置env.workspace
-def select_region(code6):
-    prov_code = str(code6)[:2]
-    env.workspace = r'I:\DataHub\Landuse_1978_2017\Urban and rural'
-    tifs = ListRasters()
-    for tif in tifs:
-        if prov_code == tif[:2]:
-            return tif
-
 # 从shp里提取geometry，返回geometry列表
 def extract_geometry(shp):
     geo_list = []
@@ -83,10 +74,7 @@ def preprocessing(city_code,city_name):
     CopyFeatures_management("lyr_cities", file_selected_city)
     
     # 选择所在省份栅格
-    tif_path = r'I:\\DataHub\\Landuse_1978_2017\\Urban and rural\\'
-    ori_landuse = tif_path + select_region(city_code)
-    env.workspace = r'.\temp_workspace'
-    # 裁切城市栅格
+    ori_landuse = r'I:\\DataHub\\Landuse_GAIA\\GAIA_China.gdb\\GAIA_China_complete'
     file_landuse_city = f'{city_name}_landuse.tif'
     extracted = ExtractByMask(ori_landuse,file_selected_city)
     extracted.save(file_landuse_city)
@@ -223,8 +211,11 @@ def merge_and_sort_init_patches(multi_shp,city_name):
         new_list = p_list[:] # 复制一个用于修改
         for p_index in range(len(p_list)):
             for p_ref_index in range(len(p_list)):
-                dis = new_list[p_index].distanceTo(new_list[p_ref_index])
-                if  dis > 0 and dis < 2000:
+                polygon1 = new_list[p_index]
+                polygon2 = new_list[p_ref_index]
+                dis = polygon1.distanceTo(polygon2)
+                if_self = polygon1.equals(polygon2)
+                if  if_self == False and dis < 2000:
                     new_list[p_index] = new_list[p_index].union(new_list[p_ref_index])
                     new_list.remove(new_list[p_ref_index])
                     return proximity_merge(new_list)
@@ -427,7 +418,7 @@ def add_partial_result_to_output_result(partial_name):
 df = pd.read_csv('七普地级市.csv',encoding = 'gb18030')
 df.index = df['prefcodeF7']
 
-prefcode7 = 3205
+prefcode7 = 3708
 name = df.loc[prefcode7,'Name']
 
 # 预处理

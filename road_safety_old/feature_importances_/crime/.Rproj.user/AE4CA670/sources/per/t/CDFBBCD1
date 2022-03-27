@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521902085483.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1929882894",
+    "id" : "CDFBBCD1",
+    "lastKnownWriteTime" : 1522157592,
+    "last_content_update" : 1522157592090,
+    "path" : "H:/Crime/Data Analysis/2015 Crimes/Regr_kd/crime/feats_extract1.R",
+    "project_path" : "feats_extract1.R",
+    "properties" : {
+        "cursorPosition" : "24,52",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -5,8 +5,8 @@ geoconv_service = "https://apis.map.qq.com/ws/coord/v1/translate?"
 output = "json"
 AK= "JOZBZ-ZLKK6-ACDSR-M3LNV-I4REV-RYF6B" 
 
-lng = 95.35453
-lat = 37.85597
+lng = 121.458628
+lat = 31.034809
 f = 1
 
 parameters = f"locations={lat},{lng}&type={f}&key={AK}"

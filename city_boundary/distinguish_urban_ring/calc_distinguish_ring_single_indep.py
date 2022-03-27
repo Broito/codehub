@@ -29,7 +29,7 @@ def zonal(polygon,polygon_field,raster):
 # %%选择所在省的栅格，但用完该方法后要记得重新设置env.workspace
 def select_region(code6):
     prov_code = str(code6)[:2]
-    env.workspace = r'I:\DataHub\Landuse_GAIA\Urban and rural'
+    env.workspace = r'I:\DataHub\Landuse_1978_2017\Urban and rural'
     tifs = ListRasters()
     for tif in tifs:
         if prov_code == tif[:2]:
@@ -83,7 +83,7 @@ def preprocessing(city_code,city_name):
     CopyFeatures_management("lyr_cities", file_selected_city)
     
     # 选择所在省份栅格
-    tif_path = r'I:\\DataHub\\Landuse_GAIA\\Urban and rural\\'
+    tif_path = r'I:\\DataHub\\Landuse_1978_2017\\Urban and rural\\'
     ori_landuse = tif_path + select_region(city_code)
     env.workspace = r'.\temp_workspace'
     # 裁切城市栅格
@@ -415,7 +415,7 @@ def merge_partial_to_total(partial_name,total_result_name):
 df = pd.read_csv('七普地级市.csv',encoding = 'gb18030')
 df.index = df['prefcodeF7']
 
-prefcode7 = 3201
+prefcode7 = 3708
 name = df.loc[prefcode7,'Name']
 
 # 预处理
