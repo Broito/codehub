@@ -30,39 +30,14 @@ def extract_geometry(shp):
     del cur
     return geo_list
 
-def merge_buffer(p_list):
-    new_list = p_list[:] # 复制一个用于修改
-    for p_index in range(len(p_list)):
-        for p_ref_index in range(len(p_list)):
-            polygon1 = new_list[p_index]
-            polygon2 = new_list[p_ref_index]
-            is_overlap = polygon1.overlaps(polygon2)
-            if_self = polygon1.equals(polygon2)
-            if if_self == False and is_overlap:
-                new_list[p_index] = new_list[p_index].union(new_list[p_ref_index])
-                new_list.remove(new_list[p_ref_index])
-                return merge_buffer()
 
-
-
-def proximity_merge(p_list):
-    new_list = p_list[:] # 复制一个用于修改
-    for p_index in range(len(p_list)):
-        for p_ref_index in range(len(p_list)):
-            polygon1 = new_list[p_index]
-            polygon2 = new_list[p_ref_index]
-            dis = polygon1.distanceTo(polygon2)
-            if_self = polygon1.equals(polygon2)
-            if  if_self == False and dis < 2000:
-                new_list[p_index] = new_list[p_index].union(new_list[p_ref_index])
-                new_list.remove(new_list[p_ref_index])
-                return proximity_merge(new_list)
-    return new_list
 
 os.chdir(r'E:\workspace\Research_2022_city_boundary\distinguish_ring\result_folder')
 env.workspace = r'E:\workspace\Research_2022_city_boundary\commuting_buffer_merge'
+env.overwriteOutput = True
 
 core_shp = r'E:\workspace\Research_2022_city_boundary\distinguish_ring\result_folder\苏州市_urban.shp'
+name = '苏州市'
 geos = extract_geometry(core_shp)
 buffers = []
 for geo in geos:
@@ -70,6 +45,28 @@ for geo in geos:
     radius = calc_buffer_radius_circle(geo.area)
     buffer = geo.buffer(radius)
     buffers.append(buffer)
+
+file_buffer_shp = f'{name}_buffer.shp'
+CopyFeatures_management(buffers,file_buffer_shp)
+
+# dissolve
+file_dissolved_buffer = f'{name}_dissolved.shp'
+Dissolve_management(file_buffer_shp,file_dissolved_buffer)
+
+# explode
+file_explode_buffer = f'{name}_exploded.shp'
+MultipartToSinglepart_management(file_dissolved_buffer,file_explode_buffer)
+
+# add id to exploded polygon
+CalculateField_management(file_explode_buffer,'Id','!FID!')
+
+# spatial join
+file_spatial_join = f'{name}_spatial_join.shp'
+SpatialJoin_analysis(core_shp, file_explode_buffer, file_spatial_join)
+
+# 按照explode buffer来做dissolve
+file_final_dissolve = f'{name}_urban_commuting_merged.shp'
+Dissolve_management(file_spatial_join,file_final_dissolve,'Id_1')
 
 
 
