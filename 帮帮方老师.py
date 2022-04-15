@@ -71,7 +71,13 @@ df.to_excel('urban_sprawl_result.xlsx')
 
 
 
-
+# egen std_avg_sprawl_area = std(avg_sprawl_area)
+# egen std_avg_sprawl_area_low = std(avg_sprawl_area_low)
+# egen std_avg_sprawl_area_high = std(avg_sprawl_area_high)
+# egen std_urban_speed = std(urban_speed)
+# egen std_urban_speed_low = std(urban_speed_low)
+# egen std_urban_speed_high = std(urban_speed_high)
+# reg 生态安全得分 std_avg_sprawl_area std_urban_speed std_urban_speed_low std_urban_speed_high,robust
 
 
 

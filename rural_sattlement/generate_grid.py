@@ -18,15 +18,15 @@ def LU_point_to_30m_grid(x,y,d):
     polygon = Polygon(array)
     return polygon     
 
-os.chdir(r'E:\workspace\Research_2022_rural_settlement\work_space\generate_grid_test')
-env.workspace = r'E:\workspace\Research_2022_rural_settlement\work_space\generate_grid_test'
+os.chdir(r'E:\workspace\Research_2022_rural_settlement\work_space\2021行政村')
+env.workspace = r'E:\workspace\Research_2022_rural_settlement\work_space\2021行政村'
 env.overwriteOutput = True
 
-rural_settlements = 'rural_example.shp'
-grid_500m = 'grid_500m.shp'
-grid_30m = 'grid_30m.shp'
-CreateFeatureclass_management('.', grid_500m,'POLYGON', spatial_reference = 'rural_example.prj')
-CreateFeatureclass_management('.', grid_30m,'POLYGON', spatial_reference = 'rural_example.prj')
+rural_settlements = '2021行政村_220_random.shp'
+grid_500m = '220_random_grid_500m.shp'
+grid_30m = '220_random_grid_30m.shp'
+CreateFeatureclass_management('.', grid_500m,'POLYGON', spatial_reference = '2021行政村_220_random.prj')
+CreateFeatureclass_management('.', grid_30m,'POLYGON', spatial_reference = '2021行政村_220_random.prj')
 
 # 获取村落点所有的字段
 # desc = Describe(rural_settlements)
@@ -65,19 +65,6 @@ for ur_row in list(cur_point):
             cur_30m.insertRow([polygon30,str(ur_row[1]),ur_row[2],str(ur_row[3]),ur_row[4],str(ur_row[5]),ur_row[6],ur_row[7],ur_row[8],str(ur_row[9]),ur_row[10]])
 
 del cur_30m
-
-
-
-
-
-
-
-
-
-
-
-del cur_point
-del cur_500m
 
 
 
