@@ -1,46 +1,38 @@
-<mxfile host="65bd71144e">
-    <diagram id="CUAv9LwTg7fQ-cYNIbQ9" name="第 1 页">
-        <mxGraphModel dx="1719" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+<mxfile host="65bd71144e" scale="3" border="0">
+    <diagram id="pgQdjB_6MxnpP5sJi2TO" name="第二版（无眼动）">
+        <mxGraphModel dx="1052" dy="718" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
-                <mxCell id="0"/>
-                <mxCell id="1" parent="0"/>
-                <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="1" source="2" target="6">
+                <mxCell id="ZwjYzD3s6c7qJhuftIQX-0"/>
+                <mxCell id="ZwjYzD3s6c7qJhuftIQX-1" parent="ZwjYzD3s6c7qJhuftIQX-0"/>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-0" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="ZwjYzD3s6c7qJhuftIQX-1" source="aRVHxngxUKxycN7JN3Qj-2" target="aRVHxngxUKxycN7JN3Qj-9">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="1" source="2" target="7">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-1" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="ZwjYzD3s6c7qJhuftIQX-1" source="aRVHxngxUKxycN7JN3Qj-2" target="aRVHxngxUKxycN7JN3Qj-16">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="可步行性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-2" value="可步行性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
                     <mxGeometry x="270" y="70" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="1" source="6" target="11">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-3" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="ZwjYzD3s6c7qJhuftIQX-1" source="aRVHxngxUKxycN7JN3Qj-9" target="aRVHxngxUKxycN7JN3Qj-22">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="手机信令" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="17">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-4" value="手机信令" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aRVHxngxUKxycN7JN3Qj-3">
                     <mxGeometry x="0.3216" y="2" relative="1" as="geometry">
-                        <mxPoint x="-19" as="offset"/>
+                        <mxPoint x="-2" y="-6" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="18" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="1" source="6" target="10">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="ZwjYzD3s6c7qJhuftIQX-1" source="aRVHxngxUKxycN7JN3Qj-9" target="aRVHxngxUKxycN7JN3Qj-16">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" value="眼动" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="18">
-                    <mxGeometry x="0.2078" y="-2" relative="1" as="geometry">
-                        <mxPoint x="13" as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="6" target="7">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="25" value="人的步行行为方式，对环境的可步行性提出要求" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="24">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-8" value="人的步行行为方式，对环境的可步行性提出要求" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aRVHxngxUKxycN7JN3Qj-7">
                     <mxGeometry x="-0.2578" relative="1" as="geometry">
                         <mxPoint x="28" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="6" value="人" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-9" value="人" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
                     <mxGeometry x="50" y="150" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;dashed=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="6">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;dashed=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="ZwjYzD3s6c7qJhuftIQX-1" source="aRVHxngxUKxycN7JN3Qj-16" target="aRVHxngxUKxycN7JN3Qj-9">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="490" y="160"/>
@@ -48,12 +40,12 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="23" value="通过人的感知影响步行行为" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="22">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-11" value="通过人的感知影响步行行为" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aRVHxngxUKxycN7JN3Qj-10">
                     <mxGeometry x="0.0751" y="1" relative="1" as="geometry">
                         <mxPoint x="-2" y="-1" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="14">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="ZwjYzD3s6c7qJhuftIQX-1" source="aRVHxngxUKxycN7JN3Qj-16" target="aRVHxngxUKxycN7JN3Qj-25">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="560" y="200"/>
@@ -61,7 +53,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="26">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="ZwjYzD3s6c7qJhuftIQX-1" source="aRVHxngxUKxycN7JN3Qj-16" target="aRVHxngxUKxycN7JN3Qj-26">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="560" y="210"/>
@@ -69,12 +61,12 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="36" value="深度学习" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="30">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-14" value="深度学习" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aRVHxngxUKxycN7JN3Qj-13">
                     <mxGeometry x="-0.2619" relative="1" as="geometry">
                         <mxPoint y="5" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="27">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="ZwjYzD3s6c7qJhuftIQX-1" source="aRVHxngxUKxycN7JN3Qj-16" target="aRVHxngxUKxycN7JN3Qj-27">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="560" y="200"/>
@@ -82,37 +74,21 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="7" value="步行环境" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-16" value="微观环境" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
                     <mxGeometry x="500" y="150" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="26">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="40" y="290"/>
-                            <mxPoint x="560" y="290"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="35" value="直接感知" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="34">
-                    <mxGeometry x="0.0655" y="-1" relative="1" as="geometry">
-                        <mxPoint x="-29" y="-1" as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="10" value="主观感知&lt;br&gt;（怎么认为）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="-20" y="230" width="120" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="11" target="14">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-20" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="ZwjYzD3s6c7qJhuftIQX-1" source="aRVHxngxUKxycN7JN3Qj-22" target="aRVHxngxUKxycN7JN3Qj-25">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="聚合" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="15">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-21" value="聚合" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aRVHxngxUKxycN7JN3Qj-20">
                     <mxGeometry x="-0.2556" y="-1" relative="1" as="geometry">
                         <mxPoint x="12" y="-1" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="11" value="个体行为&lt;br&gt;（怎么做）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="120" y="230" width="120" height="40" as="geometry"/>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-22" value="个体行为&lt;br&gt;（怎么做）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="50" y="230" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="14" target="7">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="ZwjYzD3s6c7qJhuftIQX-1" source="aRVHxngxUKxycN7JN3Qj-25" target="aRVHxngxUKxycN7JN3Qj-16">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="460" y="210"/>
@@ -120,19 +96,227 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="38" value="提出需求" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="37">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-24" value="提出需求" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aRVHxngxUKxycN7JN3Qj-23">
                     <mxGeometry x="-0.2636" y="1" relative="1" as="geometry">
                         <mxPoint x="9" y="1" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="14" value="人流量&lt;br&gt;（人的环境）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-25" value="人流量&lt;br&gt;（人的环境）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
                     <mxGeometry x="370" y="230" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="街道景观要素&lt;br&gt;（视觉直观）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-26" value="街道景观要素&lt;br&gt;（视觉直观）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
                     <mxGeometry x="500" y="230" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="安全性&lt;br&gt;（潜在）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-27" value="安全性&lt;br&gt;（潜在）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
                     <mxGeometry x="630" y="230" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-28" value="步行环境" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="85" y="595" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-29" value="微观尺度&lt;br&gt;（环境感知）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="215" y="535" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-30" value="中观尺度&lt;br&gt;（城市布局）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="215" y="665" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-33" value="设施可及性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="345" y="665" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-34" value="步行体验舒适性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="345" y="475" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-35" value="步行空间安全性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="345" y="535" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-36" value="步行设施便利性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="345" y="595" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-37" value="步行行为" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="637" y="575" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-38" value="通勤需求" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="500" y="515" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-39" value="休闲需求" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="500" y="575" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="aRVHxngxUKxycN7JN3Qj-40" value="混合需求" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ZwjYzD3s6c7qJhuftIQX-1">
+                    <mxGeometry x="500" y="635" width="90" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="CUAv9LwTg7fQ-cYNIbQ9" name="第 1 页">
+        <mxGraphModel dx="1721" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" parent="1" source="2" target="6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" parent="1" source="2" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="可步行性" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="70" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" parent="1" source="6" target="11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="手机信令" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="17" vertex="1" connectable="0">
+                    <mxGeometry x="0.3216" y="2" relative="1" as="geometry">
+                        <mxPoint x="-19" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" parent="1" source="6" target="10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="眼动" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="18" vertex="1" connectable="0">
+                    <mxGeometry x="0.2078" y="-2" relative="1" as="geometry">
+                        <mxPoint x="13" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;" parent="1" source="6" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="人的步行行为方式，对环境的可步行性提出要求" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="24" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2578" relative="1" as="geometry">
+                        <mxPoint x="28" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="人" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="150" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;dashed=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="7" target="6" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="490" y="160"/>
+                            <mxPoint x="490" y="160"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="通过人的感知影响步行行为" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="22" vertex="1" connectable="0">
+                    <mxGeometry x="0.0751" y="1" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7" target="14" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="560" y="200"/>
+                            <mxPoint x="430" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="560" y="210"/>
+                            <mxPoint x="560" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="深度学习" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="30" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2619" relative="1" as="geometry">
+                        <mxPoint y="5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7" target="27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="560" y="200"/>
+                            <mxPoint x="690" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="步行环境" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="150" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="10" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="40" y="290"/>
+                            <mxPoint x="560" y="290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="直接感知" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="34" vertex="1" connectable="0">
+                    <mxGeometry x="0.0655" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-29" y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="主观感知&lt;br&gt;（怎么认为）" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-20" y="230" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" parent="1" source="11" target="14" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="聚合" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="15" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2556" y="-1" relative="1" as="geometry">
+                        <mxPoint x="12" y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="个体行为&lt;br&gt;（怎么做）" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="230" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="14" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="460" y="210"/>
+                            <mxPoint x="530" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="提出需求" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="37" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2636" y="1" relative="1" as="geometry">
+                        <mxPoint x="9" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="人流量&lt;br&gt;（人的环境）" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="370" y="230" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="街道景观要素&lt;br&gt;（视觉直观）" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="230" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="安全性&lt;br&gt;（潜在）" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="230" width="120" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="ZuibGFhvCAY-U9Gx2UY-" name="第 2 页">
+        <mxGraphModel dx="894" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-0"/>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-1" parent="Fi6f9W1bjjePUpAKexxf-0"/>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-2" value="步行行为模式" style="rounded=0;whiteSpace=wrap;html=1;" parent="Fi6f9W1bjjePUpAKexxf-1" vertex="1">
+                    <mxGeometry x="390" y="250" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-4" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="Fi6f9W1bjjePUpAKexxf-1" source="Fi6f9W1bjjePUpAKexxf-3" target="Fi6f9W1bjjePUpAKexxf-2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-3" value="街道可步行性" style="rounded=0;whiteSpace=wrap;html=1;" parent="Fi6f9W1bjjePUpAKexxf-1" vertex="1">
+                    <mxGeometry x="240" y="250" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-12" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;rounded=0;" parent="Fi6f9W1bjjePUpAKexxf-1" source="Fi6f9W1bjjePUpAKexxf-5" target="Fi6f9W1bjjePUpAKexxf-3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-5" value="可及性" style="rounded=0;whiteSpace=wrap;html=1;" parent="Fi6f9W1bjjePUpAKexxf-1" vertex="1">
+                    <mxGeometry x="60" y="130" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="Fi6f9W1bjjePUpAKexxf-1" source="Fi6f9W1bjjePUpAKexxf-6" target="Fi6f9W1bjjePUpAKexxf-3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="220" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-6" value="舒适性" style="rounded=0;whiteSpace=wrap;html=1;" parent="Fi6f9W1bjjePUpAKexxf-1" vertex="1">
+                    <mxGeometry x="60" y="250" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="Fi6f9W1bjjePUpAKexxf-1" source="Fi6f9W1bjjePUpAKexxf-8" target="Fi6f9W1bjjePUpAKexxf-3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fi6f9W1bjjePUpAKexxf-8" value="安全性" style="rounded=0;whiteSpace=wrap;html=1;" parent="Fi6f9W1bjjePUpAKexxf-1" vertex="1">
+                    <mxGeometry x="60" y="370" width="100" height="40" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

@@ -1,0 +1,1220 @@
+<mxfile host="65bd71144e" scale="3" border="0">
+    <diagram id="0TPr3KJZBpIRf-P41fM6" name="第三版">
+        <mxGraphModel dx="1052" dy="718" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="HHB23A_LwcB9X39SEITh-0"/>
+                <mxCell id="HHB23A_LwcB9X39SEITh-1" parent="HHB23A_LwcB9X39SEITh-0"/>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-0" value="" style="swimlane;startSize=0;dashed=1;" vertex="1" parent="HHB23A_LwcB9X39SEITh-1">
+                    <mxGeometry x="50" y="60" width="420" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-1" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-0" source="4zMTOauPvBA0yDy-QAxQ-15" target="4zMTOauPvBA0yDy-QAxQ-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-2" value="&lt;span style=&quot;font-size: 10.0pt&quot;&gt;研究内容1：基于手机信令数据的步行行为模式时空分析&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-0">
+                    <mxGeometry x="14" y="8" width="380" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-3" value="POI、用地类型" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-0">
+                    <mxGeometry x="284" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-4" value="带有功能属性的&lt;br&gt;手机信令网格单元" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-0">
+                    <mxGeometry x="204" y="140" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-0" source="4zMTOauPvBA0yDy-QAxQ-3" target="4zMTOauPvBA0yDy-QAxQ-4">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="324" y="90"/>
+                            <mxPoint x="324" y="115"/>
+                            <mxPoint x="269" y="115"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-6" value="叠置分析" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4zMTOauPvBA0yDy-QAxQ-5">
+                    <mxGeometry x="-0.0374" y="1" relative="1" as="geometry">
+                        <mxPoint x="-42" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-7" value="步行轨迹语义链" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-0">
+                    <mxGeometry x="104" y="220" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-0" source="4zMTOauPvBA0yDy-QAxQ-4" target="4zMTOauPvBA0yDy-QAxQ-7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-9" value="手机信令用户记录" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-0">
+                    <mxGeometry x="14" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-10" value="步行出行轨迹" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-0">
+                    <mxGeometry x="14" y="140" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-0" source="4zMTOauPvBA0yDy-QAxQ-10" target="4zMTOauPvBA0yDy-QAxQ-7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-12" value="为步行轨迹赋予网格语义链" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4zMTOauPvBA0yDy-QAxQ-11">
+                    <mxGeometry x="0.3385" y="2" relative="1" as="geometry">
+                        <mxPoint x="33" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-13" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-0" source="4zMTOauPvBA0yDy-QAxQ-9" target="4zMTOauPvBA0yDy-QAxQ-10">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-14" value="出行方式筛选" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4zMTOauPvBA0yDy-QAxQ-13">
+                    <mxGeometry x="-0.48" y="-1" relative="1" as="geometry">
+                        <mxPoint x="1" y="7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-15" value="手机信令网格" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-0">
+                    <mxGeometry x="147" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-19" value="步行行为模式" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-0">
+                    <mxGeometry x="109" y="300" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-0" source="4zMTOauPvBA0yDy-QAxQ-7">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="169" y="270"/>
+                            <mxPoint x="169" y="270"/>
+                        </Array>
+                        <mxPoint x="169" y="300" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-23" value="时空聚类分析" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4zMTOauPvBA0yDy-QAxQ-22">
+                    <mxGeometry x="-0.4076" y="-1" relative="1" as="geometry">
+                        <mxPoint x="1" y="6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-68" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.79;dx=15.06;direction=south;notch=0;rounded=1;strokeWidth=1;rotation=-90;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-0">
+                    <mxGeometry x="399" y="188" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-25" value="" style="swimlane;startSize=0;dashed=1;" vertex="1" parent="HHB23A_LwcB9X39SEITh-1">
+                    <mxGeometry x="500" y="60" width="430" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-26" value="&lt;font style=&quot;font-size: 13px&quot;&gt;研究内容2：&lt;span style=&quot;font-size: 13px&quot;&gt;步行行为的&lt;/span&gt;&lt;span style=&quot;font-size: 13px&quot;&gt;环境影响因素分析&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Helvetica;align=left;fontStyle=1;fontSize=13;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-25">
+                    <mxGeometry x="16" y="9" width="380" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-27" value="街景数据" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-25">
+                    <mxGeometry x="145" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-28" value="路网数据" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-25">
+                    <mxGeometry x="275" y="50" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-29" value="行人流量/车流量" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-25">
+                    <mxGeometry x="15" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-30" value="" style="swimlane;startSize=0;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-25">
+                    <mxGeometry x="55" y="205" width="310" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-31" value="SHAP模型解释" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-30">
+                    <mxGeometry x="164" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-32" value="模型优化&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-30">
+                    <mxGeometry x="24" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-33" value="步行行为环境影响机制" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-25">
+                    <mxGeometry x="135" y="300" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-25" source="4zMTOauPvBA0yDy-QAxQ-30" target="4zMTOauPvBA0yDy-QAxQ-33">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-35" value="机器学习模型" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-25">
+                    <mxGeometry x="165" y="211" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-36" value="&lt;span&gt;&lt;br&gt;步行环境因子库&lt;/span&gt;" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-25">
+                    <mxGeometry x="20" y="140" width="380" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-25" source="4zMTOauPvBA0yDy-QAxQ-27" target="4zMTOauPvBA0yDy-QAxQ-36">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="210" y="140"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-38" value="目标识别&lt;br&gt;语义分割" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4zMTOauPvBA0yDy-QAxQ-37">
+                    <mxGeometry x="-0.3238" relative="1" as="geometry">
+                        <mxPoint y="3" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-25" source="4zMTOauPvBA0yDy-QAxQ-28">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="243" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-25" source="4zMTOauPvBA0yDy-QAxQ-29">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="171" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="4zMTOauPvBA0yDy-QAxQ-25" target="4zMTOauPvBA0yDy-QAxQ-30">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="209" y="180" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-47" value="" style="swimlane;startSize=0;dashed=1;" vertex="1" parent="HHB23A_LwcB9X39SEITh-1">
+                    <mxGeometry x="50" y="450" width="880" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-48" value="&lt;span style=&quot;font-size: 10.0pt&quot;&gt;研究内容3：建立可步行性测度框架&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-47">
+                    <mxGeometry x="11" y="5" width="440" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-49" value="通畅性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-47">
+                    <mxGeometry x="156" y="62" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-50" value="安全性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-47">
+                    <mxGeometry x="636" y="62" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-51" value="舒适性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-47">
+                    <mxGeometry x="476" y="62" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-52" value="便利性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-47">
+                    <mxGeometry x="316" y="62" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-53" value="" style="swimlane;startSize=0;rounded=1;strokeWidth=1;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-47">
+                    <mxGeometry x="137" y="36" width="640" height="59" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-54" value="构建可步行性评价指标体系" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-53">
+                    <mxGeometry x="206" y="-1" width="231" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-56" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.79;dx=15.06;direction=south;notch=0;rounded=1;strokeWidth=1;" vertex="1" parent="HHB23A_LwcB9X39SEITh-1">
+                    <mxGeometry x="550" y="419" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-58" value="指标筛选、确定权重" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="HHB23A_LwcB9X39SEITh-1">
+                    <mxGeometry x="613" y="420" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.397;entryY=0.035;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="HHB23A_LwcB9X39SEITh-1" source="4zMTOauPvBA0yDy-QAxQ-3" target="4zMTOauPvBA0yDy-QAxQ-36">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="438" y="175"/>
+                            <mxPoint x="671" y="175"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-60" value="整体可步行性解读" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="HHB23A_LwcB9X39SEITh-1">
+                    <mxGeometry x="206" y="591" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-61" value="提出改善建议&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="HHB23A_LwcB9X39SEITh-1">
+                    <mxGeometry x="686" y="591" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-62" value="实证检验与评价" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="HHB23A_LwcB9X39SEITh-1">
+                    <mxGeometry x="526" y="591" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-63" value="可步行性空间分析" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="HHB23A_LwcB9X39SEITh-1">
+                    <mxGeometry x="366" y="591" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-64" value="" style="swimlane;startSize=0;rounded=1;strokeWidth=1;" vertex="1" parent="HHB23A_LwcB9X39SEITh-1">
+                    <mxGeometry x="187" y="565" width="640" height="59" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-65" value="可步行性评价" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="4zMTOauPvBA0yDy-QAxQ-64">
+                    <mxGeometry x="207" y="-2" width="231" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4zMTOauPvBA0yDy-QAxQ-67" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="HHB23A_LwcB9X39SEITh-1" source="4zMTOauPvBA0yDy-QAxQ-53" target="4zMTOauPvBA0yDy-QAxQ-65">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="-XPkXxH-pbfcxjLINd9h" name="因子库">
+        <mxGraphModel dx="2615" dy="1220" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="BErmtxTuClM17m5-QNNb-0"/>
+                <mxCell id="BErmtxTuClM17m5-QNNb-1" parent="BErmtxTuClM17m5-QNNb-0"/>
+                <mxCell id="BErmtxTuClM17m5-QNNb-165" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-2" target="BErmtxTuClM17m5-QNNb-163">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-2" value="通畅性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="710" y="430" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-164" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-3" target="BErmtxTuClM17m5-QNNb-163">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="860" y="105.52941176470586" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-3" value="便利性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="710" y="90" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-166" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-5" target="BErmtxTuClM17m5-QNNb-163">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="860" y="760" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-5" value="舒适性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="710" y="859" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-167" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-6" target="BErmtxTuClM17m5-QNNb-163">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-6" value="安全性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="710" y="940" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-7" target="BErmtxTuClM17m5-QNNb-19">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-7" target="BErmtxTuClM17m5-QNNb-20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-7" target="BErmtxTuClM17m5-QNNb-21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-7" target="BErmtxTuClM17m5-QNNb-22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-7" target="BErmtxTuClM17m5-QNNb-23">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-7" target="BErmtxTuClM17m5-QNNb-24">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-7" value="POI/AOI" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="200" y="170" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-8" target="BErmtxTuClM17m5-QNNb-17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-8" target="BErmtxTuClM17m5-QNNb-18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-8" value="土地利用" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="200" y="280" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-9" target="BErmtxTuClM17m5-QNNb-27">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-9" target="BErmtxTuClM17m5-QNNb-28">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-9" target="BErmtxTuClM17m5-QNNb-29">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-9" target="BErmtxTuClM17m5-QNNb-30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-9" value="路网" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="200" y="390" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-11" target="BErmtxTuClM17m5-QNNb-33">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-11" target="BErmtxTuClM17m5-QNNb-34">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-11" value="常住人口&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%E8%B7%AF%E7%BD%91%22%20style%3D%22rounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22200%22%20y%3D%22360%22%20width%3D%22110%22%20height%3D%2230%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="200" y="570" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-38">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-39">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-40">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-41">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-42">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-43">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-44">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-45">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-46">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-14" target="BErmtxTuClM17m5-QNNb-47">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-14" value="街景" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="200" y="929" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-117" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-17" target="BErmtxTuClM17m5-QNNb-25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-17" value="土地利用混合度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="260" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-116" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-18">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="100" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-18" value="绿地占比" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="300" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-105" style="rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-19" target="BErmtxTuClM17m5-QNNb-25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-19" value="商业设施密度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-107" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-20" target="BErmtxTuClM17m5-QNNb-25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-20" value="文娱设施密度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="40" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-108" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-21" target="BErmtxTuClM17m5-QNNb-25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-21" value="教育设施密度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="80" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-111" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-22" target="BErmtxTuClM17m5-QNNb-25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-22" value="医疗设施密度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="120" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-113" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-23" target="BErmtxTuClM17m5-QNNb-25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-23" value="绿色公共空间密度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="160" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-115" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-24" target="BErmtxTuClM17m5-QNNb-25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-24" value="公共交通站场密度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="200" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-157" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-25" target="BErmtxTuClM17m5-QNNb-3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="710" y="110" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-25" value="服务丰富度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="550" y="90" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-156" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-26" target="BErmtxTuClM17m5-QNNb-3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-26" value="服务可及性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="550" y="60" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-118" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-27" target="BErmtxTuClM17m5-QNNb-31">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-123" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-27" target="BErmtxTuClM17m5-QNNb-54">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-27" value="路网密度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="360" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-120" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-28" target="BErmtxTuClM17m5-QNNb-31">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-124" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-28" target="BErmtxTuClM17m5-QNNb-54">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="480" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-28" value="街区边长" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="400" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-121" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-29" target="BErmtxTuClM17m5-QNNb-31">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="410" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-125" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-29" target="BErmtxTuClM17m5-QNNb-54">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="480" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-29" value="交叉口密度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="440" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-122" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-30" target="BErmtxTuClM17m5-QNNb-31">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="410" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-30" value="路段节点比" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="480" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-153" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-31" target="BErmtxTuClM17m5-QNNb-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-31" value="网络通畅性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="550" y="390" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-126" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-33" target="BErmtxTuClM17m5-QNNb-74">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-33" value="常住人口密度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="550" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-34" value="人口年龄结构" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="590" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-158" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-36" target="BErmtxTuClM17m5-QNNb-3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-36" value="服务齐全度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="550" y="120" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-132" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-37" target="BErmtxTuClM17m5-QNNb-52">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-147" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-37" target="BErmtxTuClM17m5-QNNb-51">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-37" value="绿视率" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="810" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-133" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-38" target="BErmtxTuClM17m5-QNNb-52">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="850" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-146" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-38">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="1030" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-38" value="天空开阔度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="850" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-134" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-39" target="BErmtxTuClM17m5-QNNb-53">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-145" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-39">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="1030" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-39" value="建筑物围度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="890" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-135" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-40" target="BErmtxTuClM17m5-QNNb-53">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-144" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-40" target="BErmtxTuClM17m5-QNNb-51">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-40" value="界面复杂度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="930" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-136" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-41" target="BErmtxTuClM17m5-QNNb-51">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-41" value="交通标识" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="970" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-137" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-42" target="BErmtxTuClM17m5-QNNb-51">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="1030" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-42" value="信号灯" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="1010" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-138" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-43" target="BErmtxTuClM17m5-QNNb-51">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-43" value="人行道" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="1050" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-139" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-44" target="BErmtxTuClM17m5-QNNb-51">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="1030" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-44" value="人行道护栏" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="1090" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-140" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-45">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="1030" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-45" value="绿化分隔带" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="1130" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-131" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-46">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="688.4" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-141" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-46" target="BErmtxTuClM17m5-QNNb-51">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-46" value="照明条件" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="1170" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-142" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-47">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="1030" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-143" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-47" target="BErmtxTuClM17m5-QNNb-53">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-47" value="路面平整度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="1210" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-48" target="BErmtxTuClM17m5-QNNb-49">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-48" value="车辆" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="200" y="750" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-128" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-49" target="BErmtxTuClM17m5-QNNb-74">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-129" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-49" target="BErmtxTuClM17m5-QNNb-71">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-49" value="车流量" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="750" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-127" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-50" target="BErmtxTuClM17m5-QNNb-74">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="690" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-130" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-50" target="BErmtxTuClM17m5-QNNb-71">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="550" y="730" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-50" value="行人流量" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="380" y="690" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-149" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-51" target="BErmtxTuClM17m5-QNNb-6">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="710" y="1050" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-51" value="交通安全度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="550" y="1019" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-151" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-52" target="BErmtxTuClM17m5-QNNb-5">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="710" y="870" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-52" value="自然环境舒适性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="550" y="840" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-150" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-53" target="BErmtxTuClM17m5-QNNb-5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-53" value="人工环境舒适性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="550" y="880" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-155" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-54" target="BErmtxTuClM17m5-QNNb-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-54" value="本体通畅性" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="550" y="470" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-55" target="BErmtxTuClM17m5-QNNb-14">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-55" target="BErmtxTuClM17m5-QNNb-70">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-55" target="BErmtxTuClM17m5-QNNb-48">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-55" value="微观尺度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="50" y="819" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-56" target="BErmtxTuClM17m5-QNNb-7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-56" target="BErmtxTuClM17m5-QNNb-8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-56" target="BErmtxTuClM17m5-QNNb-9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-56" target="BErmtxTuClM17m5-QNNb-11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-56" value="社区尺度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="50" y="390" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-57" target="BErmtxTuClM17m5-QNNb-56">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-57" target="BErmtxTuClM17m5-QNNb-55">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-57" value="步行环境" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="-100" y="630" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-70" target="BErmtxTuClM17m5-QNNb-50">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-70" value="行人" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="200" y="690" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-152" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-71">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="710" y="870" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-71" value="拥挤度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="550" y="720" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-148" style="edgeStyle=none;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="BErmtxTuClM17m5-QNNb-1" source="BErmtxTuClM17m5-QNNb-74" target="BErmtxTuClM17m5-QNNb-6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-74" value="街道监视度" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="550" y="680" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-159" value="" style="shape=crossbar;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="-105" y="1270" width="615" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-160" value="步行环境因子库" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="80" y="1285" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-161" value="" style="shape=crossbar;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="365" y="1290" width="645" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-162" value="可步行性评价体系" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="660" y="1270" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BErmtxTuClM17m5-QNNb-163" value="可步行性评价指标体系" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="BErmtxTuClM17m5-QNNb-1">
+                    <mxGeometry x="890" y="630" width="130" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="6lUuXWvCDBCXfNHUS1Yk" name="第二版">
+        <mxGraphModel dx="1375" dy="938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="uAsLOfoo0t94VQ52lpb6-0"/>
+                <mxCell id="uAsLOfoo0t94VQ52lpb6-1" parent="uAsLOfoo0t94VQ52lpb6-0"/>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-0" value="" style="swimlane;startSize=0;dashed=1;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="50" y="60" width="440" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-14" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" parent="stI7LFHkSuyNTj1nVk40-0" source="stI7LFHkSuyNTj1nVk40-13" target="stI7LFHkSuyNTj1nVk40-3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-1" value="&lt;span style=&quot;font-size: 10.0pt&quot;&gt;研究内容1：基于手机信令数据的步行行为模式时空分析&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="stI7LFHkSuyNTj1nVk40-0" vertex="1">
+                    <mxGeometry x="14" y="8" width="380" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-2" value="POI、用地类型" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="stI7LFHkSuyNTj1nVk40-0" vertex="1">
+                    <mxGeometry x="284" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-3" value="带有功能属性的&lt;br&gt;手机信令网格单元" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="stI7LFHkSuyNTj1nVk40-0" vertex="1">
+                    <mxGeometry x="204" y="140" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="stI7LFHkSuyNTj1nVk40-0" source="stI7LFHkSuyNTj1nVk40-2" target="stI7LFHkSuyNTj1nVk40-3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="324" y="90"/>
+                            <mxPoint x="324" y="115"/>
+                            <mxPoint x="269" y="115"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="1" value="叠置分析" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="stI7LFHkSuyNTj1nVk40-4">
+                    <mxGeometry x="-0.0374" y="1" relative="1" as="geometry">
+                        <mxPoint x="-42" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-5" value="步行轨迹语义链" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="stI7LFHkSuyNTj1nVk40-0" vertex="1">
+                    <mxGeometry x="104" y="220" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="stI7LFHkSuyNTj1nVk40-0" source="stI7LFHkSuyNTj1nVk40-3" target="stI7LFHkSuyNTj1nVk40-5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-7" value="手机信令用户记录" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="stI7LFHkSuyNTj1nVk40-0" vertex="1">
+                    <mxGeometry x="14" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-8" value="步行出行轨迹" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="stI7LFHkSuyNTj1nVk40-0" vertex="1">
+                    <mxGeometry x="14" y="140" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="stI7LFHkSuyNTj1nVk40-0" source="stI7LFHkSuyNTj1nVk40-8" target="stI7LFHkSuyNTj1nVk40-5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-10" value="为步行轨迹赋予网格语义链" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="stI7LFHkSuyNTj1nVk40-9" vertex="1" connectable="0">
+                    <mxGeometry x="0.3385" y="2" relative="1" as="geometry">
+                        <mxPoint x="33" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-11" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="stI7LFHkSuyNTj1nVk40-0" source="stI7LFHkSuyNTj1nVk40-7" target="stI7LFHkSuyNTj1nVk40-8" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-12" value="出行方式筛选" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="stI7LFHkSuyNTj1nVk40-11" vertex="1" connectable="0">
+                    <mxGeometry x="-0.48" y="-1" relative="1" as="geometry">
+                        <mxPoint x="1" y="7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-13" value="手机信令网格" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="stI7LFHkSuyNTj1nVk40-0" vertex="1">
+                    <mxGeometry x="147" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="stI7LFHkSuyNTj1nVk40-0" source="stI7LFHkSuyNTj1nVk40-15" target="stI7LFHkSuyNTj1nVk40-16" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="169" y="350"/>
+                            <mxPoint x="169" y="350"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-73" value="时空分析" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="stI7LFHkSuyNTj1nVk40-72" vertex="1" connectable="0">
+                    <mxGeometry x="-0.7111" y="-1" relative="1" as="geometry">
+                        <mxPoint x="1" y="10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-15" value="步行行为类型" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="stI7LFHkSuyNTj1nVk40-0" vertex="1">
+                    <mxGeometry x="104" y="300" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-16" value="步行行为模式" style="rounded=0;whiteSpace=wrap;html=1;" parent="stI7LFHkSuyNTj1nVk40-0" vertex="1">
+                    <mxGeometry x="109" y="380" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="stI7LFHkSuyNTj1nVk40-0" source="stI7LFHkSuyNTj1nVk40-16" target="stI7LFHkSuyNTj1nVk40-71" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="169" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-20" value="结合环境因素" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="stI7LFHkSuyNTj1nVk40-19" vertex="1" connectable="0">
+                    <mxGeometry x="-0.6872" y="-1" relative="1" as="geometry">
+                        <mxPoint x="26" y="9" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="stI7LFHkSuyNTj1nVk40-0" source="stI7LFHkSuyNTj1nVk40-5" target="stI7LFHkSuyNTj1nVk40-15" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="169" y="270"/>
+                            <mxPoint x="169" y="270"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-22" value="聚类分析" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="stI7LFHkSuyNTj1nVk40-21" vertex="1" connectable="0">
+                    <mxGeometry x="-0.4076" y="-1" relative="1" as="geometry">
+                        <mxPoint x="1" y="6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-71" value="环境-行为模型" style="rounded=0;whiteSpace=wrap;html=1;" parent="stI7LFHkSuyNTj1nVk40-0" vertex="1">
+                    <mxGeometry x="314" y="380" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-23" value="" style="swimlane;startSize=0;dashed=1;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="500" y="60" width="430" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-24" value="&lt;span style=&quot;font-size: 10.0pt&quot;&gt;研究内容2：&lt;/span&gt;&lt;span style=&quot;font-size: 10.0pt&quot;&gt;步行交通安全的环境影响因素分析&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="stI7LFHkSuyNTj1nVk40-23" vertex="1">
+                    <mxGeometry x="16" y="9" width="380" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-25" value="街景数据" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="stI7LFHkSuyNTj1nVk40-23" vertex="1">
+                    <mxGeometry x="145" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-26" value="行人交通事故数据&lt;br&gt;路网数据" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="stI7LFHkSuyNTj1nVk40-23" vertex="1">
+                    <mxGeometry x="275" y="50" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-27" value="行人流量" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" parent="stI7LFHkSuyNTj1nVk40-23" vertex="1">
+                    <mxGeometry x="15" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-28" value="" style="swimlane;startSize=0;" parent="stI7LFHkSuyNTj1nVk40-23" vertex="1">
+                    <mxGeometry x="56" y="300" width="310" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-29" value="SHAP模型解释" style="rounded=0;whiteSpace=wrap;html=1;" parent="stI7LFHkSuyNTj1nVk40-28" vertex="1">
+                    <mxGeometry x="164" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-30" value="模型优化&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="stI7LFHkSuyNTj1nVk40-28" vertex="1">
+                    <mxGeometry x="24" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-31" value="步行安全环境代理变量" style="rounded=0;whiteSpace=wrap;html=1;" parent="stI7LFHkSuyNTj1nVk40-23" vertex="1">
+                    <mxGeometry x="106" y="390" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="stI7LFHkSuyNTj1nVk40-23" source="stI7LFHkSuyNTj1nVk40-28" target="stI7LFHkSuyNTj1nVk40-31" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-33" value="模型解释性分析" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="stI7LFHkSuyNTj1nVk40-23" vertex="1">
+                    <mxGeometry x="161" y="306" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-34" value="&lt;span&gt;&lt;br&gt;步行环境因子库&lt;/span&gt;" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" parent="stI7LFHkSuyNTj1nVk40-23" vertex="1">
+                    <mxGeometry x="20" y="140" width="380" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="stI7LFHkSuyNTj1nVk40-23" source="stI7LFHkSuyNTj1nVk40-25" target="stI7LFHkSuyNTj1nVk40-34" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="210" y="140"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-36" value="目标识别&lt;br&gt;语义分割" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="stI7LFHkSuyNTj1nVk40-35" vertex="1" connectable="0">
+                    <mxGeometry x="-0.3238" relative="1" as="geometry">
+                        <mxPoint y="3" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="stI7LFHkSuyNTj1nVk40-23" source="stI7LFHkSuyNTj1nVk40-26" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="243" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="stI7LFHkSuyNTj1nVk40-23" source="stI7LFHkSuyNTj1nVk40-27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="171" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-39" value="" style="swimlane;startSize=0;" parent="stI7LFHkSuyNTj1nVk40-23" vertex="1">
+                    <mxGeometry x="55" y="205" width="310" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-40" value="随机森林模型" style="rounded=0;whiteSpace=wrap;html=1;" parent="stI7LFHkSuyNTj1nVk40-39" vertex="1">
+                    <mxGeometry x="164" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-41" value="负二项回归模型" style="rounded=0;whiteSpace=wrap;html=1;" parent="stI7LFHkSuyNTj1nVk40-39" vertex="1">
+                    <mxGeometry x="24" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-42" value="模型对比" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="stI7LFHkSuyNTj1nVk40-23" vertex="1">
+                    <mxGeometry x="174" y="210" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="stI7LFHkSuyNTj1nVk40-23" source="stI7LFHkSuyNTj1nVk40-34" target="stI7LFHkSuyNTj1nVk40-39" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="stI7LFHkSuyNTj1nVk40-23" source="stI7LFHkSuyNTj1nVk40-39" target="stI7LFHkSuyNTj1nVk40-28" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-45" value="" style="swimlane;startSize=0;dashed=1;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="50" y="540" width="880" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-46" value="&lt;span style=&quot;font-size: 10.0pt&quot;&gt;研究内容3：考虑步行行为模式和步行安全的可步行性评价&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="stI7LFHkSuyNTj1nVk40-45" vertex="1">
+                    <mxGeometry x="11" y="5" width="440" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-50" value="通畅性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" parent="stI7LFHkSuyNTj1nVk40-45" vertex="1">
+                    <mxGeometry x="156" y="62" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-51" value="安全性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" parent="stI7LFHkSuyNTj1nVk40-45" vertex="1">
+                    <mxGeometry x="636" y="62" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-52" value="舒适性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" parent="stI7LFHkSuyNTj1nVk40-45" vertex="1">
+                    <mxGeometry x="476" y="62" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-53" value="便利性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" parent="stI7LFHkSuyNTj1nVk40-45" vertex="1">
+                    <mxGeometry x="316" y="62" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-54" value="" style="swimlane;startSize=0;rounded=1;strokeWidth=1;" parent="stI7LFHkSuyNTj1nVk40-45" vertex="1">
+                    <mxGeometry x="137" y="36" width="640" height="59" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-55" value="构建可步行性评价指标体系" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="stI7LFHkSuyNTj1nVk40-54" vertex="1">
+                    <mxGeometry x="209" y="-1" width="231" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-59" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.79;dx=15.06;direction=south;notch=0;rounded=1;strokeWidth=1;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="360" y="506" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-60" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.79;dx=15.06;direction=south;notch=0;rounded=1;strokeWidth=1;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="550" y="506" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-61" value="选取指标，确定权重" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="170" y="506" width="231" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-62" value="提供步行环境安全评价指标体系" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="615" y="507" width="231" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.397;entryY=0.035;entryDx=0;entryDy=0;entryPerimeter=0;" parent="uAsLOfoo0t94VQ52lpb6-1" source="stI7LFHkSuyNTj1nVk40-2" target="stI7LFHkSuyNTj1nVk40-34" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="438" y="175"/>
+                            <mxPoint x="671" y="175"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-64" value="整体可步行性解读" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="206" y="681" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-65" value="提出改善建议&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="686" y="681" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-66" value="实证检验与评价" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="526" y="681" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-67" value="可步行性空间分析" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="366" y="681" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-68" value="" style="swimlane;startSize=0;rounded=1;strokeWidth=1;" parent="uAsLOfoo0t94VQ52lpb6-1" vertex="1">
+                    <mxGeometry x="187" y="655" width="640" height="59" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-69" value="可步行性评价" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="stI7LFHkSuyNTj1nVk40-68" vertex="1">
+                    <mxGeometry x="207" y="-2" width="231" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="stI7LFHkSuyNTj1nVk40-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="uAsLOfoo0t94VQ52lpb6-1" source="stI7LFHkSuyNTj1nVk40-34" edge="1" target="stI7LFHkSuyNTj1nVk40-71">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="420" y="360" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="424" y="220"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="0" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="uAsLOfoo0t94VQ52lpb6-1" source="stI7LFHkSuyNTj1nVk40-54" target="stI7LFHkSuyNTj1nVk40-69">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="UxNpY3OrSSYUAZEO5KYD" name="第 1 页">
+        <mxGraphModel dx="1052" dy="718" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="27" value="" style="swimlane;startSize=0;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="60" width="440" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="&lt;span style=&quot;font-size: 10.0pt&quot;&gt;研究内容1：基于手机信令数据的步行行为提取与时空分析&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="27">
+                    <mxGeometry x="14" y="8" width="380" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="POI、用地类型" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="27">
+                    <mxGeometry x="290" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="带有功能属性的&lt;br&gt;手机信令网格单元" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="27">
+                    <mxGeometry x="224" y="140" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="27" source="77" target="78">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="90"/>
+                            <mxPoint x="330" y="115"/>
+                            <mxPoint x="289" y="115"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="81" value="步行轨迹语义链" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="27">
+                    <mxGeometry x="110" y="220" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="27" source="78" target="81">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="手机信令用户记录" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="27">
+                    <mxGeometry x="20" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="步行出行轨迹" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="27">
+                    <mxGeometry x="20" y="140" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="27" source="83" target="81">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="为步行轨迹赋予网格语义链" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="74">
+                    <mxGeometry x="0.3385" y="2" relative="1" as="geometry">
+                        <mxPoint x="33" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="84" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="27" source="82" target="83">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="85" value="出行方式筛选" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="84">
+                    <mxGeometry x="-0.48" y="-1" relative="1" as="geometry">
+                        <mxPoint x="1" y="7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="86" value="手机信令网格" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="27">
+                    <mxGeometry x="153" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="27" source="86" target="78">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="步行行为类型" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="27">
+                    <mxGeometry x="110" y="300" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="步行行为的时空分布" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="27">
+                    <mxGeometry x="280" y="300" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="27" source="87" target="88">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="环境步行服务职能" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="27">
+                    <mxGeometry x="110" y="380" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="27" source="87" target="90">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" value="聚合至路段" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="91">
+                    <mxGeometry x="-0.6872" y="-1" relative="1" as="geometry">
+                        <mxPoint x="1" y="12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="27" source="81" target="87">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="175" y="270"/>
+                            <mxPoint x="175" y="270"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="80" value="聚类分析" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="79">
+                    <mxGeometry x="-0.4076" y="-1" relative="1" as="geometry">
+                        <mxPoint x="1" y="6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" value="" style="swimlane;startSize=0;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="60" width="430" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="&lt;span style=&quot;font-size: 10.0pt&quot;&gt;研究内容2：&lt;/span&gt;&lt;span style=&quot;font-size: 10.0pt&quot;&gt;步行环境交通风险建模&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="58">
+                    <mxGeometry x="16" y="9" width="380" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="95" value="街景数据" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="58">
+                    <mxGeometry x="145" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="行人交通事故数据&lt;br&gt;路网数据" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="58">
+                    <mxGeometry x="275" y="50" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="行人流量" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="58">
+                    <mxGeometry x="15" y="50" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="" style="swimlane;startSize=0;" vertex="1" parent="58">
+                    <mxGeometry x="56" y="300" width="310" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="SHAP模型解释" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="101">
+                    <mxGeometry x="164" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" value="模型优化&lt;span style=&quot;white-space: pre&quot;&gt;&#9;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="101">
+                    <mxGeometry x="24" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" value="步行安全环境代理变量" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="58">
+                    <mxGeometry x="106" y="390" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="58" source="101" target="104">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" value="模型解释性分析" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="58">
+                    <mxGeometry x="161" y="306" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="&lt;span&gt;&lt;br&gt;步行环境因子库&lt;/span&gt;" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" vertex="1" parent="58">
+                    <mxGeometry x="20" y="140" width="380" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="58" source="95" target="107">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="210" y="140"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="94" value="目标识别&lt;br&gt;语义分割" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="93">
+                    <mxGeometry x="-0.3238" relative="1" as="geometry">
+                        <mxPoint y="3" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.586;entryY=0.102;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="58" source="97" target="107">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="58" source="99">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="171" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="108" value="" style="swimlane;startSize=0;" vertex="1" parent="58">
+                    <mxGeometry x="55" y="205" width="310" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="随机森林模型" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="108">
+                    <mxGeometry x="164" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="负二项回归模型" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="108">
+                    <mxGeometry x="24" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="模型对比" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="58">
+                    <mxGeometry x="174" y="210" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="58" source="107" target="108">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="58" source="108" target="101">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="" style="swimlane;startSize=0;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="540" width="880" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="&lt;span style=&quot;font-size: 10.0pt&quot;&gt;研究内容3：顾及步行行为需求和步行安全的可步行性评价&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="59">
+                    <mxGeometry x="11" y="5" width="440" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="160" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.491;entryY=0.04;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="59" source="117">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="570.24" y="118" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="161" value="确定指标权重" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="160">
+                    <mxGeometry x="-0.6753" relative="1" as="geometry">
+                        <mxPoint y="12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="117" value="&lt;span&gt;各空间单元&lt;br&gt;出行行为占比&lt;/span&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="59">
+                    <mxGeometry x="490" y="40" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="可及性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="59">
+                    <mxGeometry x="149" y="142" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="安全性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="59">
+                    <mxGeometry x="629" y="142" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="舒适性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="59">
+                    <mxGeometry x="469" y="142" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="便利性指标" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="59">
+                    <mxGeometry x="309" y="142" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="159" value="" style="swimlane;startSize=0;rounded=1;strokeWidth=1;" vertex="1" parent="59">
+                    <mxGeometry x="130" y="116" width="640" height="59" as="geometry"/>
+                </mxCell>
+                <mxCell id="165" value="可步行性评价指标" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="159">
+                    <mxGeometry x="209" y="-1" width="231" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="162" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.491;entryY=0.04;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="59" source="164">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="340.24" y="118" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="163" value="修改指标" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="162">
+                    <mxGeometry x="-0.6753" relative="1" as="geometry">
+                        <mxPoint y="12" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="164" value="Walk Score 基础指标" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="59">
+                    <mxGeometry x="260" y="40" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.79;dx=15.06;direction=south;notch=0;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="506" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.79;dx=15.06;direction=south;notch=0;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="506" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="明确与步行行为对应的可步行性的要求" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="129" y="506" width="231" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="提供步行安全环境代理变量，确定变量权重" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="506" width="231" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.397;entryY=0.035;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="77" target="107">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="438" y="175"/>
+                            <mxPoint x="671" y="175"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="166" value="整体可步行性解读" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="199" y="761" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="167" value="提出改善建议&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="679" y="761" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="168" value="实证分析与评价" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="519" y="761" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="169" value="可步行性空间分析" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="359" y="761" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" value="" style="swimlane;startSize=0;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="735" width="640" height="59" as="geometry"/>
+                </mxCell>
+                <mxCell id="171" value="可步行性评价" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="170">
+                    <mxGeometry x="209" y="-1" width="231" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="172" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.482;entryY=0.078;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="159" target="171">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
