@@ -18,15 +18,15 @@ def LU_point_to_30m_grid(x,y,d):
     polygon = Polygon(array)
     return polygon     
 
-os.chdir(r'E:\workspace\Research_2022_rural_settlement\work_space\2021行政村')
-env.workspace = r'E:\workspace\Research_2022_rural_settlement\work_space\2021行政村'
+os.chdir(r'E:\workspace\Research_2022_rural_settlement\work_space\空间分层抽样\result')
+env.workspace = r'E:\workspace\Research_2022_rural_settlement\work_space\空间分层抽样\result'
 env.overwriteOutput = True
 
-rural_settlements = '2021行政村_220_random.shp'
-grid_500m = '220_random_grid_500m.shp'
-grid_30m = '220_random_grid_30m.shp'
-CreateFeatureclass_management('.', grid_500m,'POLYGON', spatial_reference = '2021行政村_220_random.prj')
-CreateFeatureclass_management('.', grid_30m,'POLYGON', spatial_reference = '2021行政村_220_random.prj')
+rural_settlements = r'样本点2386.shp'
+grid_500m = 'grid_500m.shp'
+grid_30m = 'grid_30m.shp'
+CreateFeatureclass_management('.', grid_500m,'POLYGON', spatial_reference = '样本点2386.shp')
+# CreateFeatureclass_management('.', grid_30m,'POLYGON', spatial_reference = '样本点2386.shp')
 
 # 获取村落点所有的字段
 # desc = Describe(rural_settlements)
@@ -36,15 +36,15 @@ CreateFeatureclass_management('.', grid_30m,'POLYGON', spatial_reference = '2021
 append_fields = ['RS_FID', '省', '市代码', '市', '区县码', '区县', '街道', '村', 'UR_code','address','category']
 append_fields_type = ['SHORT','TEXT','TEXT','TEXT','TEXT','TEXT','TEXT','TEXT','TEXT','TEXT','SHORT']
 batch_add_fields(grid_500m,append_fields,append_fields_type)
-batch_add_fields(grid_30m,append_fields,append_fields_type)
+# batch_add_fields(grid_30m,append_fields,append_fields_type)
 
 # 循环创造网格
 grid_500m_field = ['SHAPE@','RS_FID', '省', '市代码', '市', '区县码', '区县', '街道', '村', 'UR_code','address']
-grid_30m_field = ['SHAPE@','RS_FID', '省', '市代码', '市', '区县码', '区县', '街道', '村', 'UR_code','address']
-point_field = ['SHAPE@XY','FID','省份', '城市代', '城市', '区县代', '区县', '乡镇_1', '居委_1', '城乡分', '地址']
+# grid_30m_field = ['SHAPE@','RS_FID', '省', '市代码', '市', '区县码', '区县', '街道', '村', 'UR_code','address']
+point_field = ['SHAPE@XY','FID','省份', '城市代', '城市', '区县代', '区县', '乡镇_1', '居委_1', 'ur_code', '地址']
 cur_point = da.SearchCursor(rural_settlements,point_field)
 cur_500m = da.InsertCursor(grid_500m,grid_500m_field)
-cur_30m = da.InsertCursor(grid_30m,grid_30m_field)
+# cur_30m = da.InsertCursor(grid_30m,grid_30m_field)
 
 # 生成500m格网
 for ur_row in list(cur_point):
@@ -54,17 +54,18 @@ for ur_row in list(cur_point):
     polygon500 = LU_point_to_30m_grid(point_x-250,point_y+250,500)
     cur_500m.insertRow([polygon500,str(ur_row[1]),ur_row[2],str(ur_row[3]),ur_row[4],str(ur_row[5]),ur_row[6],ur_row[7],ur_row[8],str(ur_row[9]),ur_row[10]])
 
-    # 生成30m网格
-    ori_LU_x = point_x-30*8
-    ori_LU_y = point_y+30*8
-    for y in range(16):
-        for x in range(16):
-            LU_x = ori_LU_x + 30*x
-            LU_y = ori_LU_y - 30*y
-            polygon30 = LU_point_to_30m_grid(LU_x,LU_y,30)
-            cur_30m.insertRow([polygon30,str(ur_row[1]),ur_row[2],str(ur_row[3]),ur_row[4],str(ur_row[5]),ur_row[6],ur_row[7],ur_row[8],str(ur_row[9]),ur_row[10]])
+    # # 生成30m网格
+    # ori_LU_x = point_x-30*8
+    # ori_LU_y = point_y+30*8
+    # for y in range(16):
+    #     for x in range(16):
+    #         LU_x = ori_LU_x + 30*x
+    #         LU_y = ori_LU_y - 30*y
+    #         polygon30 = LU_point_to_30m_grid(LU_x,LU_y,30)
+    #         cur_30m.insertRow([polygon30,str(ur_row[1]),ur_row[2],str(ur_row[3]),ur_row[4],str(ur_row[5]),ur_row[6],ur_row[7],ur_row[8],str(ur_row[9]),ur_row[10]])
 
-del cur_30m
+# del cur_30m
+del cur_500m
 
 
 
