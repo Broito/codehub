@@ -208,7 +208,7 @@ def send_error_email():
 #  输入参数
 user_id = "13262737587"  # 微博用户名
 password = "ljwncc19980306"  # 你的微博密码
-key_words = ['暴雨','积水','洪涝'] # 关键词列表
+key_words = ['暴雨','积水','洪水','淹','涝','蹚水','大雨','山洪','滑坡','泥石流','趟水','大水'] # 关键词列表
 output_path = r'E:\workspace\Research_2022_crawling_weibo\result' # 输出文件存放的文件夹
 os.chdir(output_path)
 
@@ -231,6 +231,9 @@ try:
             # 更新条目计数
             upd_count = 0
 
+            # 不需要那么着急去遍历
+            time.sleep(10)
+
             # 开始遍历每一个关键词
             for page_number in list(range(1,51)):
                 if crawling_single_page(driver,csv_today,csv_yest,key_word,page_number):
@@ -239,7 +242,7 @@ try:
                     # 已经追上前面的进度，那么跳出循环，继续下一个关键词
                     finished_time = datetime.now().strftime('%Y/%m/%d %H:%M:%S')
                     print(f'{finished_time} -- 【{key_word}】本次共写入{upd_count}条微博数据.')
-                    f.write(f'{finished_time} -- 【{key_word}】本次共写入{upd_count}条微博数据.')
+                    f.write(f'{finished_time} -- 【{key_word}】本次共写入{upd_count}条微博数据.\n')
                     break
         f.close()
 except:
@@ -255,3 +258,5 @@ except:
 
 
 
+
+# %%
