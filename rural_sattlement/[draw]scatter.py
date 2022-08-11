@@ -6,7 +6,7 @@ from mpl_toolkits.axisartist.axislines import Subplot
 
 plt.rcParams["font.family"] = "SimHei"
 
-gdf = gpd.read_file(r"E:\workspace\Research_2022_rural_settlement\work_space\村落验证一张表\村落验证一张表\rural_settlement_total_point_v4.shp")
+gdf = gpd.read_file(r"E:\workspace\Research_2022_rural_settlement\work_space\村落验证一张表\村落验证一张表\rural_settlement_total_point_v5.shp")
 y_fields = ['ner_esa','ner_esri','ner_ghsl10','ner_wsf','ner_gaia','ner_gisa2','ner_gisd30','ner_glc30']
 
 # %% 分类别
@@ -58,7 +58,7 @@ for y_field in y_fields:
     ax.set_ylabel(y_field.split('_')[-1]+'预测值')
     fig.add_subplot(ax)
 
-    df = gdf[(gdf['district'] == 'Eastern China') |(gdf['district'] == 'Northeastern China') ]
+    df = gdf[gdf['district'] == 'Eastern China']
     x = df['ntr_esa']
     y = df[y_field]
     ax.scatter(x,y,s = 3,c = 'green',label = 'Eastern China')
@@ -72,6 +72,11 @@ for y_field in y_fields:
     x = df['ntr_esa']
     y = df[y_field]
     ax.scatter(x,y,s = 3,c = 'blue',label = 'Central China')
+
+    df = gdf[gdf['district'] == 'Northeastern China']
+    x = df['ntr_esa']
+    y = df[y_field]
+    ax.scatter(x,y,s = 3,c = 'gold',label = 'Northeastern China')
 
     ax.legend()
     i = i+1
