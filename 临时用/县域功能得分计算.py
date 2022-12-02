@@ -8,9 +8,15 @@ from scipy.spatial.distance import squareform
 os.chdir(r'E:\workspace\Help_2022_彭荣熙\221012 to wnc')
 
 df_county = gpd.read_file('山东县界.shp')
-df_village = gpd.read_file('221012打分评价版.shp')
-function_fields = ['生产功','生活功','生态功']
+df_village = gpd.read_file('221012打分评价版_2.shp')
+function_fields = ['一产生', '工业生', '商服生', '生产支', '生活支', 
+        '居住功', '就业保', '生活服', '文化服', '调节服',
+       '支持服', '生产_1', '生活_1', '生态_1']
+function_fields_names = ['一产生产功能','工业生产功能','商服生产功能',
+'生产支撑交通','生活支撑交通','居住功能','就业保障功能','生活服务功能',
+'文化服务功能','调节服务功能','支持服务功能','生产功能','生活功能','生态功能']
 
+# %%
 # 计算字段对应的5个值
 def calc_5value(county_code,field_name):
 
@@ -52,7 +58,7 @@ def calc_5value(county_code,field_name):
     sorted_villages['p1_value'] = sorted_villages[ability_field]*sorted_villages['center_distance']
     p1 = sum(sorted_villages['p1_value'])
     # 计算part2
-    p2 = sum(list(ability_list)[1:]) - max_ability
+    p2 = sum(list(ability_list)) - max_ability
     # 计算part3
     p3 = sum(sorted_villages['center_distance'])
     # 去掉值为0的村
@@ -75,6 +81,8 @@ def calc_5value(county_code,field_name):
     distB = squareform(distA)
     xixj = m1*m2
     xixjdij = m1*m2*distB
+    xixj = xixj.astype(np.float64)
+    xixjdij = xixjdij.astype(np.float64)
     ss_part1 = sum(sum(xixjdij))/2
     ss_part2 = sum(sum(xixj))/2
     ss_part3 = sum(sum(distB))/2
@@ -89,10 +97,10 @@ for i in df_county.iterrows():
     items = i[1]
     code_county = items['区县代']
     
-    for field in function_fields:
+    for field,field_name in zip(function_fields,function_fields_names):
         r1,r2,r3,r4,r5 = calc_5value(code_county,field)
 
-        field_prefix = field[:-1]+'_'
+        field_prefix = field_name+'_'
         df_county.loc[index,field_prefix+'首位比'] = r1
         df_county.loc[index,field_prefix+'首位度'] = r2
         df_county.loc[index,field_prefix+'集中度'] = r3
@@ -101,4 +109,5 @@ for i in df_county.iterrows():
     
     print(code_county)
 
-df_county.to_excel('result.xlsx',encoding = 'GB18030')
+df_county.to_excel('result_v3.xlsx',encoding = 'GB18030')
+# %%
